@@ -18,7 +18,7 @@ function Portfolio() {
   return (
     <div className={classes.porfolio}>
       <div className={classes.porfolioTitle}>
-        <h2>Portfolio</h2>
+        <h2>Portfolio!</h2>
         <p>Here you can see all of my projects that I done on my own or with my team. HTML, CSS, Java Script and React were used on it.</p>
       </div>
       <div className={classes.porfolioFilters}>
