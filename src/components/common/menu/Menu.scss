@@ -1,0 +1,136 @@
+.menu {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 10%;
+  background-color: #B2B2B3;
+  height: 100%;
+  position: fixed;
+  z-index: 1;
+  opacity: 80%;
+
+  &-list {
+    list-style: none;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+    gap: 20px;
+    padding: 15px;
+    flex-wrap: wrap;
+
+    &-item {
+      font-size: 1.5rem;
+      transition: .5s;
+      box-shadow: 0 0 0 0 rgba(0, 0, 0, 1);
+      transform: scale(1);
+      border-radius: 50%;
+
+
+      &-link {
+        color: black;
+
+
+
+        &:hover {
+          color: wheat;
+          transition: .5s;
+          border-radius: 50%;
+
+        }
+      }
+    }
+  }
+}
+
+
+.img {
+  margin-top: 50px;
+  width: 80%;
+  border-radius: 50%;
+  background: black;
+  box-shadow: 0 0 0 rgba(0, 0, 0, 1);
+  transform: scale(1);
+  animation: pulse 1s infinite;
+}
+
+@keyframes pulse {
+  0% {
+    transform: scale(1);
+    box-shadow: 0 0 0 0 rgba(245, 222, 217, 0.708);
+  }
+
+  70% {
+    transform: scale(1);
+    box-shadow: 0 0 0 15px rgba(151, 247, 129, 0);
+  }
+
+  100% {
+    transform: scale(1);
+    box-shadow: 0 0 0 0 rgba(255, 252, 88, 0);
+  }
+}
+
+
+.scroll-menu {
+  display: flex;
+  flex-direction: column;
+  list-style: none;
+  padding: 15px 0 0 0;
+  align-items: flex-start;
+
+
+  &-item {
+    padding: 15px 0;
+
+    &-link {
+      position: relative;
+      transition: .5s;
+      display: flex;
+      flex-direction: row;
+      gap: 10px;
+      align-items: center;
+      text-decoration: none;
+      color: rgba(0, 0, 0, 1);
+      display: inline;
+
+      &.active {
+        color: wheat;
+
+        &::after {
+          width: 100%;
+          background-color: wheat;
+        }
+      }
+
+      span {
+        font-size: 1.5vw;
+        padding-left: 5px;
+      }
+
+
+
+
+      &:after {
+        position: absolute;
+        content: '';
+        background-color: black;
+        width: 1rem;
+        left: 0px;
+        bottom: -.3rem;
+        transition: width 0.5s ease-in-out;
+        height: .1rem;
+      }
+
+      &:hover {
+        color: wheat;
+        transition: .5s;
+
+        &:after {
+          width: 100%;
+          background-color: wheat;
+        }
+      }
+    }
+  }
+}

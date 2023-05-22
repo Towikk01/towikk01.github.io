@@ -1,0 +1,140 @@
+.about {
+  margin-left: 10%;
+  width: 90%;
+  // min-height: 100vh;
+  background-color: #cec9c9;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 0;
+
+  &-container {
+
+    width: 90%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding-top: 3rem;
+    gap: 1.5rem;
+
+    &-section {
+      font-size: 1.5vw;
+
+      &-wrapper {
+        padding-top: 3.5rem;
+        display: flex;
+        gap: 3rem;
+
+        &-info {
+          list-style: none;
+          margin: 0;
+          padding: 10px 0;
+          width: auto;
+          display: grid;
+          grid-template-columns: repeat(2, 4fr);
+          flex-wrap: wrap;
+          grid-gap: 20px;
+          transition: .5s;
+
+
+
+          &-container {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+
+
+            &-item {
+              flex-wrap: nowrap;
+              font-size: 1.5vw;
+              display: flex;
+              align-items: center;
+              gap: 5px;
+
+              span {
+                a {
+                  &:hover {
+                    color: wheat;
+                    transition: .5s;
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+
+      &-image {
+        width: 30vw;
+        padding: 0;
+        object-fit: cover;
+        transform: scaleX(-1);
+      }
+    }
+
+    &-title {
+      color: rgb(13, 8, 8);
+      font-size: 4rem;
+      position: relative;
+      display: inline;
+      align-self: center;
+
+      &::after {
+        position: absolute;
+        content: '';
+        background-color: black;
+        width: 80%;
+        left: 0px;
+        bottom: -.3rem;
+        transition: width 0.5s ease-in-out;
+        height: .1rem;
+
+      }
+    }
+  }
+}
+
+.kekus {
+  color: black;
+  text-decoration: none;
+  transition: .5s;
+
+  &:hover {
+    color: wheat;
+    transition: .5s;
+    text-decoration: underline;
+  }
+}
+
+.progress {
+  display: grid;
+  grid-template-columns: repeat(2, 4fr);
+  grid-gap: 1rem;
+  padding-top: 2rem;
+  width: 90%;
+  margin: 1px auto;
+
+  &-item {
+    display: flex;
+    justify-content: space-between;
+    flex-direction: column;
+
+    &-text {
+      display: flex;
+      justify-content: space-between;
+    }
+
+    &-bar {
+      width: 100%;
+      background: #76aaea;
+      height: 1.5rem;
+
+      &-complete {
+        width: 50%;
+        background-color: wheat;
+        height: 100%;
+      }
+    }
+
+  }
+}
