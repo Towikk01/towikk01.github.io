@@ -15,6 +15,11 @@ const classes = {
 };
  
 function Contacts({ sectionRef }) {
+  const onFormSubmit = (e) => {
+    e.preventDefault();
+    e.target.reset();
+  };
+
   return (
     <div className={classes.contacts} ref={sectionRef} id='contacts'>
       <div className={classes.contactsTitle}>
@@ -58,7 +63,7 @@ function Contacts({ sectionRef }) {
             </p>
           </div>
         </div>
-        <form className={classes.contactsForm}>
+        <form className={classes.contactsForm} onSubmit={onFormSubmit}>
           <div className={classes.formPart}>
             <label htmlFor="name">Name</label>
             <input type="text" placeholder="Anton" name="name" id="name" className={classes.formInput} />
