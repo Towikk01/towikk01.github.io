@@ -1,0 +1,132 @@
+.contacts {
+  width: 90%;
+  margin-left: 10%;
+  min-height: 60vh;
+  background-color: #cec9c9;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+
+  &-label {
+    width: 50vh;
+    height: 35vh;
+    display: flex;
+    flex-direction: column;
+    gap: 1.5rem;
+    background-color: #e2dfdf;
+
+    &-top {
+      display: flex;
+      justify-content: space-between;
+      padding-top: 3vh;
+      font-size: 2rem;
+      width: 80%;
+      align-self: center;
+
+      input {
+        padding: 10px 3rem;
+      }
+    }
+  }
+
+  &-button {
+    font-size: 1.5rem;
+    padding: 15px 20px;
+    background-color: #b9ada0;
+    align-self: center;
+    border: 1px black solid;
+    cursor: pointer;
+    transition: .5s;
+
+    &:hover {
+      opacity: 70%;
+    }
+  }
+
+  &-wrapper {
+    display: flex;
+    gap: 4rem;
+
+    &-info {
+      height: 35vh;
+      width: 35vh;
+      border: 1px black solid;
+      background-color: #e2dfdf;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-evenly;
+      gap: 1rem;
+      padding-left: 1rem;
+
+      &-item {
+        display: inline;
+
+        span {
+          font-size: 1.5rem;
+        }
+
+        p {
+          margin: 0;
+          padding-top: 0.3rem;
+        }
+
+
+        a {
+          text-decoration: none;
+          color: black;
+          transition: .5s;
+          display: block;
+          padding-top: .3rem;
+
+          &:hover {
+            color: #95744b;
+            text-decoration: underline;
+          }
+        }
+
+        svg {
+          padding-right: 0.5vw;
+          font-size: 1.5rem;
+          transition: .5s;
+
+          &:hover {
+            color: #95744b;
+          }
+        }
+      }
+    }
+  }
+
+
+
+  &-title {
+    text-align: center;
+    padding-top: 1.5rem;
+
+    h3 {
+      font-size: 3rem;
+      margin: 0;
+      padding-top: 1.5rem;
+      position: relative;
+      display: inline;
+
+      &::after {
+        position: absolute;
+        content: '';
+        background-color: black;
+        width: 80%;
+        left: 0px;
+        bottom: -.3rem;
+        transition: width 0.5s ease-in-out;
+        height: .1rem;
+
+      }
+
+    }
+
+    p {
+      font-size: 1.5rem;
+    }
+
+  }
+}

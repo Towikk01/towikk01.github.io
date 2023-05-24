@@ -14,7 +14,7 @@ function Menu({ sectionRefs }) {
   return (
     <div className={classes.menu}>
       <img className={classes.img} src={image} alt='Towikk' />
-      <h2>Anton Masuytkin</h2>
+      <h2 style={{ textAlign: 'center' }}>Anton Masuytkin</h2>
       <Links />
       <ScrollList sectionRefs={sectionRefs} />
     </div>
