@@ -1,4 +1,4 @@
-import { FaHome, FaReceipt, FaClipboardList, FaBookOpen, FaGripLines, FaEnvelope } from "react-icons/fa";
+import { FaHome, FaReceipt, FaClipboardList, FaBookOpen, FaEnvelope } from "react-icons/fa";
 import './Menu.scss'
 import useScrollSpy from 'react-use-scrollspy';
 
@@ -9,41 +9,47 @@ const classes = {
   Active: 'active'
 }
 function ScrollList({ sectionRefs }) {
+
   const activeSection = useScrollSpy({
     sectionElementRefs: [...sectionRefs],
     offsetPx: -300,
   });
+
+  const onLinkClick = (e, index) => {
+    e.preventDefault();
+    sectionRefs[index].current.scrollIntoView({
+      behavior: 'smooth',
+      offsetPx: -300,
+    });
+  };
+
+
   return (
     <ul className={classes.ScrollMenu}>
       <li className={classes.ScrollItem}>
-        <a className={`${classes.ScrollLink} ${activeSection === 0 ? classes.Active : ''}`} href='#'>
+        <button className={`${classes.ScrollLink} ${activeSection === 0 ? classes.Active : ''}`} onClick={(e) => onLinkClick(e, 0)}>
           <FaHome /> <span>Home</span>
-        </a>
+        </button>
       </li>
       <li className={classes.ScrollItem}>
-        <a className={`${classes.ScrollLink} ${activeSection === 1 ? classes.Active : ''}`} href='#'>
+        <button className={`${classes.ScrollLink} ${activeSection === 1 ? classes.Active : ''}`} onClick={(e) => onLinkClick(e, 1)}>
           <FaReceipt /> <span>About</span>
-        </a>
+        </button>
       </li>
       <li className={classes.ScrollItem}>
-        <a className={classes.ScrollLink} href='#'>
+        <button className={`${classes.ScrollLink} ${activeSection === 2 ? classes.Active : ''}`} onClick={(e) => onLinkClick(e, 2)}>
           <FaClipboardList /> <span>Resume</span>
-        </a>
+        </button>
       </li>
       <li className={classes.ScrollItem}>
-        <a className={classes.ScrollLink} href='#'>
+        <button className={`${classes.ScrollLink} ${activeSection === 3 ? classes.Active : ''}`} onClick={(e) => onLinkClick(e, 3)}>
           <FaBookOpen /> <span>Portfolio</span>
-        </a>
+        </button>
       </li>
       <li className={classes.ScrollItem}>
-        <a className={classes.ScrollLink} href='#'>
-          <FaGripLines /><span>Services</span>
-        </a>
-      </li>
-      <li className={classes.ScrollItem}>
-        <a className={classes.ScrollLink} href='#'>
+        <button className={`${classes.ScrollLink} ${activeSection === 4 ? classes.Active : ''}`} onClick={(e) => onLinkClick(e, 4)}>
           <FaEnvelope /> <span>Contact</span>
-        </a>
+        </button>
       </li>
     </ul >
   )

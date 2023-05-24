@@ -30,8 +30,6 @@
       &-link {
         color: black;
 
-
-
         &:hover {
           color: wheat;
           transition: .5s;
@@ -93,6 +91,11 @@
       text-decoration: none;
       color: rgba(0, 0, 0, 1);
       display: inline;
+      border: none;
+      background-color: transparent;
+      font-family: inherit;
+      padding: 0;
+      cursor: pointer;
 
       &.active {
         color: wheat;

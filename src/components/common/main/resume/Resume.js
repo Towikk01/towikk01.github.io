@@ -1,16 +1,6 @@
-import './resume.scss'
-import useScrollSpy from 'react-use-scrollspy';
+import './resume.scss';
 
-
-function Resume() {
-
-  function ScrollList({ sectionRefs }) {
-    const activeSection = useScrollSpy({
-      sectionElementRefs: [...sectionRefs],
-      offsetPx: -300,
-    })
-  }
-
+function Resume({ sectionRef }) {
   const classes = {
     resume: 'resume',
     resumeTitle: 'resume-container-title',
@@ -18,10 +8,10 @@ function Resume() {
     resumeWrapper: 'resume-wrapper',
     resumeItem: 'resume-wrapper-item',
     resumeBlock: 'resume-wrapper-item-block'
-
   }
+
   return (
-    <div className={classes.resume}>
+    <div className={classes.resume} ref={sectionRef} id='resume'>
       <div className={classes.resumeContainer}>
         <div className={classes.resumeTitle}>
           <h2>Resume</h2>
@@ -75,4 +65,4 @@ function Resume() {
   )
 }
 
-export default Resume
+export default Resume;

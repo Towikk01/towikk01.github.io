@@ -1,12 +1,14 @@
 import { useEffect, useState } from 'react';
-import image from '../../../../images/me2.jpeg'
-import './hero.scss'
+import image from '../../../../images/me2.jpeg';
+import './hero.scss';
+
 const classes = {
   hero: 'hero',
   heroImage: 'hero-image',
   heroText: 'hero-text',
   heroName: 'hero-text-name',
 }
+
 function Hero({ sectionRef }) {
 
   const [text, setText] = useState('Developer');
@@ -19,11 +21,11 @@ function Hero({ sectionRef }) {
     return () => {
       clearInterval(interval)
     }
-  }, [])
+  }, []);
 
   return (
     <>
-      <img className={classes.heroImage} src={image} />
+      <img className={classes.heroImage} src={image} alt="hero" />
       <div ref={sectionRef} className={classes.heroText}>
         <div className={classes.heroName} >
           <div> Anton Masuytkin</div>
@@ -34,4 +36,4 @@ function Hero({ sectionRef }) {
     </ >
   )
 }
-export default Hero
+export default Hero;

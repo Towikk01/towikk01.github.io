@@ -30,7 +30,7 @@ function About({ sectionRef }) {
         <div className={classes.aboutSection}>
           <span>Hi there! I'm Anton, Towikk for friends ;) As a 21 age student I try to improve myself everyday in every aspect of my life, exactly i fell in love with coding!</span>
           <div className={classes.aboutWrapper}>
-            <img src={image} className={classes.aboutImg}></img>
+            <img src={image} className={classes.aboutImg} alt="about" />
             <div className={classes.aboutInfoContainer} >
               <h2 style={{ margin: '0', paddingBottom: '1.5rem' }}>Frontend developer/react developer</h2>
 

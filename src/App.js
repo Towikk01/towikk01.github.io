@@ -13,7 +13,9 @@ function App() {
   const sectionRefs = [
     useRef(null),
     useRef(null),
-    useRef(null)
+    useRef(null),
+    useRef(null),
+    useRef(null),
   ]
   return (
     <div className="App">
@@ -22,7 +24,7 @@ function App() {
       <About sectionRef={sectionRefs[1]} />
       <Resume sectionRef={sectionRefs[2]} />
       <Porfolio sectionRef={sectionRefs[3]} />
-      <Contacts />
+      <Contacts sectionRef={sectionRefs[4]} />
     </div>
   );
 }
