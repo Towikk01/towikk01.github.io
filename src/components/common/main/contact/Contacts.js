@@ -81,32 +81,6 @@ function Contacts({ sectionRef }) {
         </form>
       </div>
     </div>
-
-    //     <label className={classes.contactsLabel}>
-    //       <div className={classes.conactsLabelTop}>
-    //         <div style={{ display: 'flex', flexDirection: 'column' }}>
-    //           <label htmlFor='Name'>Your name</label>
-    //           <input type='text'></input>
-    //         </div>
-    //         <div style={{ display: 'flex', flexDirection: 'column' }}>
-    //           <label htmlFor='email'>Your Email</label>
-    //           <input></input>
-    //         </div>
-    //       </div>
-    //       <div style={{ display: 'flex', flexDirection: 'column', width: '80%', alignSelf: 'center' }}>
-    //         <label style={{ fontSize: '2rem' }} htmlFor='text'>Subject</label>
-    //         <input style={{ padding: '10px 3rem' }}></input>
-    //       </div>
-    //       <div style={{ display: 'flex', flexDirection: 'column', width: '80%', alignSelf: 'center' }}>
-    //         <label style={{ fontSize: '2rem' }} htmlFor='message'>Message</label>
-    //         <input style={{ padding: '4rem' }} name='message' id='message'></input>
-    //       </div>
-    //       <button className={classes.contactsButton}>Send message</button>
-    //     </label>
-
-    //   </div>
-
-    // </div >
   )
 }
 
