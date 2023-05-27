@@ -51,12 +51,22 @@
       gap: 1rem;
 
       &-item {
-        color: gray;
-        font-size: 1.2rem;
 
-        &:hover {
-          color: #76aaea;
+
+        button {
+          border: none;
+          color: gray;
+          font-size: 1.2rem;
+          background-color: #dce1e1;
           cursor: pointer;
+          transition: .5s;
+
+
+
+          &:hover {
+            color: #76aaea;
+            cursor: pointer;
+          }
         }
       }
     }

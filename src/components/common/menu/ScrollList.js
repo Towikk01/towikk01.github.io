@@ -1,4 +1,4 @@
-import { FaHome, FaReceipt, FaClipboardList, FaBookOpen, FaEnvelope } from "react-icons/fa";
+import { FaHome, FaReceipt, FaClipboardList, FaBookOpen, FaEnvelope, FaGripLines } from "react-icons/fa";
 import './Menu.scss'
 import useScrollSpy from 'react-use-scrollspy';
 
@@ -38,16 +38,21 @@ function ScrollList({ sectionRefs }) {
       </li>
       <li className={classes.ScrollItem}>
         <button className={`${classes.ScrollLink} ${activeSection === 2 ? classes.Active : ''}`} onClick={(e) => onLinkClick(e, 2)}>
-          <FaClipboardList /> <span>Resume</span>
+          <FaGripLines /> <span>Skills</span>
         </button>
       </li>
       <li className={classes.ScrollItem}>
         <button className={`${classes.ScrollLink} ${activeSection === 3 ? classes.Active : ''}`} onClick={(e) => onLinkClick(e, 3)}>
-          <FaBookOpen /> <span>Portfolio</span>
+          <FaClipboardList /> <span>Resume</span>
         </button>
       </li>
       <li className={classes.ScrollItem}>
         <button className={`${classes.ScrollLink} ${activeSection === 4 ? classes.Active : ''}`} onClick={(e) => onLinkClick(e, 4)}>
+          <FaBookOpen /> <span>Portfolio</span>
+        </button>
+      </li>
+      <li className={classes.ScrollItem}>
+        <button className={`${classes.ScrollLink} ${activeSection === 5 ? classes.Active : ''}`} onClick={(e) => onLinkClick(e, 5)}>
           <FaEnvelope /> <span>Contact</span>
         </button>
       </li>

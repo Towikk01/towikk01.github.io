@@ -1,8 +1,12 @@
+import { useState } from 'react';
 import './portfolio.scss';
+import PortfolioItem from './PortfolioItem';
+
+import projects from '../../../../constants/projects';
 
 
 function Portfolio({ sectionRef }) {
-  // const projects = [{}, {}, {}]
+
   const classes = {
     porfolio: 'portfolio',
     porfolioTitle: 'portfolio-title',
@@ -10,6 +14,10 @@ function Portfolio({ sectionRef }) {
     porfolioFiltersList: 'portfolio-filters-list',
     porfolioFiltersItem: 'portfolio-filters-list-item'
   };
+
+  const [tab, setTab] = useState(null);
+  const shownProjects = tab ? projects.filter(item => item.type == tab) : projects;
+
 
   return (
     <div className={classes.porfolio} ref={sectionRef}>
@@ -19,12 +27,28 @@ function Portfolio({ sectionRef }) {
       </div>
       <div className={classes.porfolioFilters}>
         <ul className={classes.porfolioFiltersList}>
-          <li className={classes.porfolioFiltersItem}>ALL</li>
-          <li className={classes.porfolioFiltersItem}>HTML</li>
-          <li className={classes.porfolioFiltersItem}>React</li>
+          <li className={classes.porfolioFiltersItem}><button onClick={() => {
+            setTab(null)
+          }}>All</button></li>
+          <li className={classes.porfolioFiltersItem}><button onClick={() => {
+            setTab('HTML')
+          }}>HTML</button></li>
+          <li className={classes.porfolioFiltersItem}><button onClick={() => {
+            setTab('React')
+          }}>React</button></li>
         </ul>
       </div>
-    </div>
+      <div style={{
+        display: 'flex',
+        justifyContent: 'space-evenly',
+        paddingTop: '2vh',
+        paddingBottom: '2vh',
+        gap: '1vw'
+      }}>
+        {shownProjects.map(project => <PortfolioItem project={project} />)
+        }
+      </div>
+    </div >
   )
 };
 

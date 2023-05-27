@@ -13,7 +13,7 @@ const classes = {
   formInput: 'form-input',
   formSubmit: 'form-submit',
 };
- 
+
 function Contacts({ sectionRef }) {
   const onFormSubmit = (e) => {
     e.preventDefault();
@@ -50,7 +50,7 @@ function Contacts({ sectionRef }) {
               height: '300px',
               width: '100%'
             }}>
-              <iframe 
+              <iframe
                 title="map"
                 src="https://www.google.com/maps/embed?pb=!1m17!1m12!1m3!1d2541.215861915326!2d30.60154857637128!3d50.43707978679752!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m2!1m1!2zNTDCsDI2JzEzLjgiTiAzMMKwMzYnMTIuOCJF!5e0!3m2!1sen!2spl!4v1684962473930!5m2!1sen!2spl"
                 width="100%"
@@ -66,11 +66,11 @@ function Contacts({ sectionRef }) {
         <form className={classes.contactsForm} onSubmit={onFormSubmit}>
           <div className={classes.formPart}>
             <label htmlFor="name">Name</label>
-            <input type="text" placeholder="Anton" name="name" id="name" className={classes.formInput} />
+            <input type="text" placeholder="Name" name="name" id="name" className={classes.formInput} />
           </div>
           <div className={classes.formPart}>
             <label htmlFor="email">Email</label>
-            <input type="email" placeholder="anton@mail.org" name="email" id="email" className={classes.formInput} />
+            <input type="email" placeholder="Yourmail@mail.org" name="email" id="email" className={classes.formInput} />
           </div>
           <div className={classes.formPart}>
             <label htmlFor="subject">Subject</label>
@@ -78,7 +78,7 @@ function Contacts({ sectionRef }) {
           </div>
           <div className={classes.formPart}>
             <label htmlFor="message">Message</label>
-            <textarea type="text" placeholder="Hello! How are you!" name="message" id="message" className={classes.formInput} />
+            <textarea type="text" placeholder="Hello! What's the deal?" name="message" id="message" className={classes.formInput} />
           </div>
           <div className={classes.formPart}>
             <button type="submit" className={classes.formSubmit}>Submit</button>

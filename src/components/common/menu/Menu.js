@@ -1,7 +1,7 @@
 import './Menu.scss'
 import Links from "./Links";
 import ScrollList from './ScrollList';
-import image from '../../../images/me.jpeg'
+import image from '../../../images/12.jpeg'
 import React from 'react';
 
 

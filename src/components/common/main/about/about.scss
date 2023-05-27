@@ -68,8 +68,10 @@
       &-image {
         width: 30vw;
         padding: 0;
-        object-fit: cover;
+
         transform: scaleX(-1);
+        aspect-ratio: 0.9;
+        object-fit: cover;
       }
     }
 
@@ -104,38 +106,5 @@
     color: wheat;
     transition: .5s;
     text-decoration: underline;
-  }
-}
-
-.progress {
-  display: grid;
-  grid-template-columns: repeat(2, 4fr);
-  grid-gap: 1rem;
-  padding-top: 2rem;
-  width: 90%;
-  margin: 1px auto;
-
-  &-item {
-    display: flex;
-    justify-content: space-between;
-    flex-direction: column;
-
-    &-text {
-      display: flex;
-      justify-content: space-between;
-    }
-
-    &-bar {
-      width: 100%;
-      background: #76aaea;
-      height: 1.5rem;
-
-      &-complete {
-        width: 50%;
-        background-color: wheat;
-        height: 100%;
-      }
-    }
-
   }
 }

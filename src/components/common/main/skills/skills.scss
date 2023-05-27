@@ -1,0 +1,64 @@
+.skills {
+  margin-left: 10%;
+  width: 90%;
+  // min-height: 100vh;
+  background-color: #ddd9d9;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 0;
+
+  &-title {
+    color: rgb(13, 8, 8);
+    font-size: 4rem;
+    position: relative;
+    display: inline;
+    align-self: center;
+
+    &::after {
+      position: absolute;
+      content: '';
+      background-color: black;
+      width: 80%;
+      left: 0px;
+      bottom: -.3rem;
+      transition: width 0.5s ease-in-out;
+      height: .1rem;
+
+    }
+  }
+}
+
+
+.progress {
+  display: grid;
+  grid-template-columns: repeat(2, 4fr);
+  grid-gap: 1rem;
+  padding-top: 2rem;
+  width: 90%;
+  margin: 1px auto;
+
+  &-item {
+    display: flex;
+    justify-content: space-between;
+    flex-direction: column;
+
+    &-text {
+      display: flex;
+      justify-content: space-between;
+    }
+
+    &-bar {
+      width: 100%;
+      background: #76aaea;
+      height: 1.5rem;
+
+      &-complete {
+        width: 50%;
+        background-color: wheat;
+        height: 100%;
+      }
+    }
+
+  }
+}
