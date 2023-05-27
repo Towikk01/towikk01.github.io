@@ -1,5 +1,5 @@
-import furniture from '../images/furn.png';
-import img from '../images/2ch.png';
+import furniture from '../images/furn.jpg';
+import img from '../images/2ch.jpg';
 
 
 const projects = [{
