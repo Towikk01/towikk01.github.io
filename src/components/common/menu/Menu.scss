@@ -70,7 +70,7 @@
     }
 
     @media (max-width:767px) {
-      gap: 30px;
+      gap: 15px;
     }
 
     &-item {
@@ -117,6 +117,10 @@
     width: initial;
     margin-top: 10px;
     height: 60%;
+  }
+
+  @media (max-width:767px) {
+    height: 50%;
   }
 }
 
