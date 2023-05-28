@@ -3,9 +3,18 @@
   margin-left: 10%;
   background-color: #cec9c9;
 
+  @media (max-width:1023px) {
+    margin-left: 0;
+    width: 100%;
+  }
+
   &-title {
     text-align: center;
     padding-top: 1.5rem;
+
+    @media (max-width:767px) {
+      padding-top: 1rem;
+    }
 
     h3 {
       font-size: 3rem;
@@ -13,6 +22,11 @@
       padding-top: 1.5rem;
       position: relative;
       display: inline;
+      font-weight: 400;
+
+      @media (max-width:767) {
+        font-size: 2rem;
+      }
 
       &::after {
         position: absolute;
@@ -28,6 +42,15 @@
 
     p {
       font-size: 1.5rem;
+
+      @media (max-width:1023px) {
+        font-size: 2.5vw;
+      }
+
+      @media (max-width:767px) {
+        padding: 0 1rem;
+        font-size: 1rem;
+      }
     }
   }
 
@@ -36,11 +59,29 @@
     gap: 4rem;
     padding: 4rem;
     padding-top: 2rem;
+
+    @media (max-width:1043px) {
+      gap: 2rem;
+      padding: 2rem;
+    }
+
+    @media (max-width:767px) {
+      flex-direction: column;
+      width: 90%;
+      justify-content: center;
+      margin: 0 auto;
+      padding: 1rem 0;
+      gap: 1rem;
+    }
   }
 
   &-info {
     background-color: #ddd9d9;
     width: 50%;
+
+    @media (max-width:767px) {
+      width: 100%;
+    }
 
     &-item {
       padding-left: 1rem;
@@ -75,6 +116,10 @@
     width: 50%;
     padding: 1rem;
 
+    @media (max-width:767px) {
+      width: auto;
+    }
+
     .form {
       &-part {
         display: flex;
@@ -84,11 +129,19 @@
 
         label {
           font-size: 1.5rem;
+
+          @media (max-width:767px) {
+            font-size: 1rem;
+          }
         }
 
         textarea {
           resize: vertical;
           min-height: 5rem;
+
+          @media (max-width:767px) {
+            min-height: 3rem;
+          }
         }
 
         input,
@@ -99,6 +152,10 @@
           font-size: 1.25rem;
           font-family: inherit;
           transition: all 0.35s ease-in-out;
+
+          @media (max-width:767px) {
+            font-size: 1rem;
+          }
         }
 
         input:focus-visible,

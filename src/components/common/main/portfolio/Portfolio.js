@@ -8,11 +8,12 @@ import projects from '../../../../constants/projects';
 function Portfolio({ sectionRef }) {
 
   const classes = {
-    porfolio: 'portfolio',
-    porfolioTitle: 'portfolio-title',
-    porfolioFilters: 'portfolio-filters',
-    porfolioFiltersList: 'portfolio-filters-list',
-    porfolioFiltersItem: 'portfolio-filters-list-item'
+    portfolio: 'portfolio',
+    portfolioTitle: 'portfolio-title',
+    portfolioFilters: 'portfolio-filters',
+    portfolioFiltersList: 'portfolio-filters-list',
+    portfolioFiltersItem: 'portfolio-filters-list-item',
+    portfolioItems: 'portfolio-items'
   };
 
   const [tab, setTab] = useState(null);
@@ -20,31 +21,25 @@ function Portfolio({ sectionRef }) {
 
 
   return (
-    <div className={classes.porfolio} ref={sectionRef}>
-      <div className={classes.porfolioTitle}>
+    <div className={classes.portfolio} ref={sectionRef}>
+      <div className={classes.portfolioTitle}>
         <h2>Portfolio</h2>
         <p>Here you can see all of my projects that I done on my own or with my team. HTML, CSS, Java Script and React were used on it.</p>
       </div>
-      <div className={classes.porfolioFilters}>
-        <ul className={classes.porfolioFiltersList}>
-          <li className={classes.porfolioFiltersItem}><button onClick={() => {
+      <div className={classes.portfolioFilters}>
+        <ul className={classes.portfolioFiltersList}>
+          <li className={classes.portfolioFiltersItem}><button onClick={() => {
             setTab(null)
           }}>All</button></li>
-          <li className={classes.porfolioFiltersItem}><button onClick={() => {
+          <li className={classes.portfolioFiltersItem}><button onClick={() => {
             setTab('HTML')
           }}>HTML</button></li>
-          <li className={classes.porfolioFiltersItem}><button onClick={() => {
+          <li className={classes.portfolioFiltersItem}><button onClick={() => {
             setTab('React')
           }}>React</button></li>
         </ul>
       </div>
-      <div style={{
-        display: 'flex',
-        justifyContent: 'space-evenly',
-        paddingTop: '2vh',
-        paddingBottom: '2vh',
-        gap: '1vw'
-      }}>
+      <div className={classes.portfolioItems}>
         {shownProjects.map(project => <PortfolioItem project={project} />)
         }
       </div>

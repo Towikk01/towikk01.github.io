@@ -8,6 +8,11 @@
   align-items: center;
   padding: 0;
 
+  @media (max-width:1023px) {
+    width: 100%;
+    margin-left: 0;
+  }
+
   &-container {
 
     width: 90%;
@@ -17,14 +22,35 @@
     padding-top: 3rem;
     gap: 1.5rem;
 
+    @media (max-width:1023px) {
+      padding-top: 1rem;
+    }
+
     &-section {
       font-size: 1.5vw;
+
+      @media (max-width:1023px) {
+        font-size: 2.5vw;
+        text-align: center;
+      }
+
+      @media (max-width:767px) {
+        font-size: 1rem;
+      }
 
       &-wrapper {
         padding-top: 3.5rem;
         display: flex;
         gap: 3rem;
         padding-bottom: 3vh;
+
+
+
+        @media (max-width:1023px) {
+          padding-top: 1.5rem;
+          gap: 1rem;
+          padding-bottom: 1vh;
+        }
 
         &-info {
           list-style: none;
@@ -37,12 +63,43 @@
           grid-gap: 20px;
           transition: .5s;
 
+          @media (max-width:767px) {
+            display: flex;
+            flex-direction: column;
+            gap: 10px;
+          }
+
+          span {
+            text-align: justify;
+
+            @media (max-width:1023px) {
+              padding-top: 0;
+            }
+
+            @media (max-width:767px) {
+              padding-top: 0.5rem;
+            }
+          }
 
 
           &-container {
             display: flex;
             flex-direction: column;
             align-items: center;
+
+            span {
+              @media (max-width:767px) {}
+            }
+
+            h2 {
+              margin: 0px;
+              padding-bottom: 1.5rem;
+              text-align: center;
+
+              @media (max-width:767px) {
+                padding-bottom: 0.5rem;
+              }
+            }
 
 
             &-item {
@@ -51,6 +108,14 @@
               display: flex;
               align-items: center;
               gap: 5px;
+
+              @media (max-width:1023px) {
+                font-size: 2.5vw;
+              }
+
+              @media (max-width:767px) {
+                font-size: 0.8rem;
+              }
 
               span {
                 a {
@@ -72,6 +137,11 @@
         transform: scaleX(-1);
         aspect-ratio: 0.9;
         object-fit: cover;
+
+        @media (max-width:767px) {
+          order: 2;
+          width: 40vw;
+        }
       }
     }
 
@@ -81,6 +151,15 @@
       position: relative;
       display: inline;
       align-self: center;
+      font-weight: 400;
+
+      @media (max-width:1023px) {
+        font-size: 3rem;
+      }
+
+      @media (max-width:767px) {
+        font-size: 2rem;
+      }
 
       &::after {
         position: absolute;
@@ -107,4 +186,14 @@
     transition: .5s;
     text-decoration: underline;
   }
+}
+
+.mobile {
+  display: none;
+
+  @media (max-width:767px) {
+    display: block;
+    height: 150px;
+  }
+
 }

@@ -22,7 +22,7 @@ function Resume({ sectionRef }) {
         <div className={classes.resumeItem}>
           <h3>Sumary</h3>
           <div className={classes.resumeBlock}>
-            <h4>Anton Masuytin</h4>
+            <h4>Anton Masuytkin</h4>
             <p>I am a frontend developer with 1+ year of expirience designing and developing freelance project with my command and by my own, do projects with different technologies. </p>
             <ul>
               <li>Kyiv, Ukraine, EU</li>

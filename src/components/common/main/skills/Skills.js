@@ -9,15 +9,16 @@ function Skills({ sectionRef }) {
     progressItem: 'progress-item',
     progressText: 'progress-item-text',
     progressBar: 'progress-item-bar',
-    progressCompete: 'progress-item-bar-complete'
+    progressCompete: 'progress-item-bar-complete',
+    skillsMobile: 'skills-mobile'
   }
   return (
     <div className={classes.skills} ref={sectionRef}>
-      <div style={{ alignSelf: 'center', paddingTop: '2rem' }} className={classes.skillsTitle}>
+      <div className={classes.skillsTitle}>
         Skills
       </div>
-      <div style={{ width: '90%', alignSelf: 'center', paddingTop: '2rem', paddingBottom: '5rem', display: 'flex', flexDirection: 'column', alignItems: 'center' }}>
-        <span style={{ fontSize: '1.5rem', textAlign: 'center' }}>I try to improve myself on Frontend development, also strong knowlegde about HTML, CSS and GIT system! Here you can see mine progress on different technologies!</span>
+      <div className={classes.skillsMobile}>
+        <span >I try to improve myself on Frontend development, also strong knowlegde about HTML, CSS and GIT system! Here you can see mine progress on different technologies!</span>
         <div className={classes.progress}>
           <div className={classes.progressItem}>
             <div className={classes.progressText}>

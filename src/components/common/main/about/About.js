@@ -13,12 +13,14 @@ const classes = {
   aboutInfoItem: 'about-container-section-wrapper-info-container-item',
   aboutInfoContainer: 'about-container-section-wrapper-info-container',
   kekus: 'kekus',
+  mobile: 'mobile'
 
 }
 
 function About({ sectionRef }) {
   return (
     <div ref={sectionRef} className={classes.about}>
+      <div className={classes.mobile}></div>
       <div className={classes.aboutContainer}>
         <div className={classes.aboutTitle}>
           About
@@ -28,7 +30,7 @@ function About({ sectionRef }) {
           <div className={classes.aboutWrapper}>
             <img src={image} className={classes.aboutImg} alt="about" />
             <div className={classes.aboutInfoContainer} >
-              <h2 style={{ margin: '0', paddingBottom: '1.5rem' }}>Frontend developer/react developer</h2>
+              <h2>Frontend developer/react developer</h2>
 
               <ul className={classes.aboutInfo}>
                 <li className={classes.aboutInfoItem}> <FaCalendarDay /><span>Birthday: 13 january 2002</span></li>
@@ -41,7 +43,7 @@ function About({ sectionRef }) {
                 <li className={classes.aboutInfoItem}> <FaArrowCircleUp /><span>Age: 21</span></li>
                 <li className={classes.aboutInfoItem}> <FaHandsHelping /><span>Freelance: yes</span></li>
               </ul>
-              <span style={{ textAlign: 'justify', paddingTop: "2.5rem" }}>I am a student from Kyiv, who mind everyday how to be better. I like books(classique), some kind of sport and hookahs. Playing videogames sometimes and also write my own music, don't you mind to hear that? You can text\call me anytime to ask espesial questions for our future colobaration!</span>
+              <span>I am a student from Kyiv, who mind everyday how to be better. I like books(classique), some kind of sport and hookahs. Playing videogames sometimes and also write my own music, don't you mind to hear that? You can text\call me anytime to ask espesial questions for our future colobaration!</span>
             </div>
           </div>
         </div>
