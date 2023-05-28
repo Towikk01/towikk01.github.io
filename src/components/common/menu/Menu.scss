@@ -80,8 +80,13 @@
       transform: scale(1);
       border-radius: 50%;
 
+      a {
+        display: inline-flex;
+      }
+
       @media (max-width:1023px) {
         font-size: 3rem;
+        display: inline-flex;
       }
 
       @media (max-width:767px) {
