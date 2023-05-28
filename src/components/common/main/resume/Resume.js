@@ -16,17 +16,17 @@ function Resume({ sectionRef }) {
         <div className={classes.resumeTitle}>
           <h2>Resume</h2>
         </div>
-        <span>In the block below you can see all detail information about me, also my skill education and main profile!</span>
+        <span>In the block below you can see all detailed information about me, my profile and my skill education!</span>
       </div>
       <div className={classes.resumeWrapper}>
         <div className={classes.resumeItem}>
           <h3>Sumary</h3>
           <div className={classes.resumeBlock}>
             <h4>Anton Masuytkin</h4>
-            <p>I am a frontend developer with 1+ year of expirience designing and developing freelance project with my command and by my own, do projects with different technologies. </p>
+            <p>I am a frontend developer with 1+ year experience of designing and developing freelance projects with my command and by myself with different technologies. </p>
             <ul>
-              <li>Kyiv, Ukraine, EU</li>
-              <li>(066) 41 90 682</li>
+              <li>Kyiv, Ukraine</li>
+              <li>+38 (066) 41 90 682</li>
               <li>anton.masuytkin@gmail.com</li>
             </ul>
           </div>
@@ -49,11 +49,11 @@ function Resume({ sectionRef }) {
             <div style={{ backgroundColor: '#76aaea', display: 'inline' }}>
               <span>2019-Present</span>
             </div>
-            <i style={{ display: 'block', paddingTop: '1.5rem' }}>Kyiv, Ukraine, EU</i>
+            <i style={{ display: 'block', paddingTop: '1.5rem' }}>Kyiv, Ukraine</i>
             <ul>
-              <li>Lead in development, some design, and production commercial projects.</li>
-              <li>Working with my 'HRHD' team on freelance projects, and do almost all aspects of the project. </li>
-              <li>Supervise the assessment of all code in order to ensure quality and accuracy of the project</li>
+              <li>Lead in development, some design, and production commercial projects;</li>
+              <li>Working with my 'HRHD' team on freelance projects, and do almost all aspects of the project; </li>
+              <li>Supervise the assessment of all code in order to ensure quality and accuracy of the project.</li>
 
             </ul>
           </div>

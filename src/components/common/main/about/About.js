@@ -26,24 +26,24 @@ function About({ sectionRef }) {
           About
         </div>
         <div className={classes.aboutSection}>
-          <span>Hi there! I'm Anton, Towikk for friends ;) As a 21 age student I try to improve myself everyday in every aspect of my life, exactly i fell in love with coding!</span>
+          <span>Hi there! I'm Anton, Towikk for friends ;) As a 21 age student I I'm trying to improve myself everyday in every aspect of my life, especially in coding)</span>
           <div className={classes.aboutWrapper}>
             <img src={image} className={classes.aboutImg} alt="about" />
             <div className={classes.aboutInfoContainer} >
               <h2>Frontend developer/react developer</h2>
 
               <ul className={classes.aboutInfo}>
-                <li className={classes.aboutInfoItem}> <FaCalendarDay /><span>Birthday: 13 january 2002</span></li>
-                <li className={classes.aboutInfoItem}> <FaGlobeEurope /><span>Website:towikk01</span></li>
+                <li className={classes.aboutInfoItem}> <FaCalendarDay /><span>Birthday: January 13 2002</span></li>
+                <li className={classes.aboutInfoItem}> <FaArrowCircleUp /><span>Age: 21</span></li>
+                <li className={classes.aboutInfoItem}> <FaGlobeEurope /><span>Website: towikk01</span></li>
                 <li className={classes.aboutInfoItem}> <FaPhone /><span>Phone: <a className={classes.kekus} href='tel:+380664190682'>+38 (066) 41-90-682</a></span></li>
                 <li className={classes.aboutInfoItem}> <FaMapMarkedAlt /><span>City: Kyiv, Ukraine</span></li>
                 <li className={classes.aboutInfoItem}> <FaMailBulk /><span>Mail: <a className={classes.kekus} href="mailto:anton.masuytkin@gmail.com"> anton.masuytkin@gmail.com</a></span></li>
                 <li className={classes.aboutInfoItem}> <FaUserCheck /><span>Specialisation: Frontend developer</span></li>
-
-                <li className={classes.aboutInfoItem}> <FaArrowCircleUp /><span>Age: 21</span></li>
                 <li className={classes.aboutInfoItem}> <FaHandsHelping /><span>Freelance: yes</span></li>
               </ul>
-              <span>I am a student from Kyiv, who mind everyday how to be better. I like books(classique), some kind of sport and hookahs. Playing videogames sometimes and also write my own music, don't you mind to hear that? You can text\call me anytime to ask espesial questions for our future colobaration!</span>
+              <span>I am a student from Kyiv, who's thinking how to be better everyday. I like books (classique literature), some kind of sport and hookahs. Sometimes playing videogames and writing my own music. Don't you mind to hear that? You can text\call me anytime to ask especially questions for our future colobaration!
+              </span>
             </div>
           </div>
         </div>

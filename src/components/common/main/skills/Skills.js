@@ -18,7 +18,7 @@ function Skills({ sectionRef }) {
         Skills
       </div>
       <div className={classes.skillsMobile}>
-        <span >I try to improve myself on Frontend development, also strong knowlegde about HTML, CSS and GIT system! Here you can see mine progress on different technologies!</span>
+        <span >I'm trying to improve myself in Frontend development, also I have knowlegde about HTML, CSS and GIT system! Here you can see mine progress on different technologies!</span>
         <div className={classes.progress}>
           <div className={classes.progressItem}>
             <div className={classes.progressText}>

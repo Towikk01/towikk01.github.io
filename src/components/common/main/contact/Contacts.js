@@ -24,7 +24,7 @@ function Contacts({ sectionRef }) {
     <div className={classes.contacts} ref={sectionRef} id='contacts'>
       <div className={classes.contactsTitle}>
         <h3>Contact</h3>
-        <p>You can contact me anytime, I put my personal contact address and email, just message me to take our project together.</p>
+        <p>Under this text you can see my phone and email, just message me to make our project together (you can contact me anytime u want!).</p>
       </div>
       <div className={classes.contactsWrapper}>
         <div className={classes.contactsInfo}>
@@ -40,7 +40,7 @@ function Contacts({ sectionRef }) {
           </div>
           <div className={classes.contactsInfoItem}>
             <FaMobileAlt />
-            <span>Call:</span>
+            <span>Phone:</span>
             <p><a class="kekus" href='tel: +38(066)4190682'>+38(066)41 90 682</a></p>
           </div>
           <div className={classes.contactsInfoItem}>
