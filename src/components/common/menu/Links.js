@@ -12,22 +12,22 @@ function Links() {
     <>
       <ul className={classes.menuList}>
         <li className={classes.menuItem}>
-          <a className={classes.menuLink} href='https://www.instagram.com/t0wikk/'>
+          <a className={classes.menuLink} target="_blank" rel='noreferrer' href='https://www.instagram.com/t0wikk/' >
             <FaInstagram />
           </a>
         </li>
         <li className={classes.menuItem}>
-          <a className={classes.menuLink} href='https://t.me/T0wikk'>
+          <a className={classes.menuLink} target="_blank" rel='noreferrer' href='https://t.me/T0wikk'>
             <FaTelegram />
           </a>
         </li>
         <li className={classes.menuItem}>
-          <a className={classes.menuLink} href='https://www.linkedin.com/in/towikk/'>
+          <a className={classes.menuLink} target="_blank" rel='noreferrer' href='https://www.linkedin.com/in/towikk/'>
             <FaLinkedinIn />
           </a>
         </li>
         <li className={classes.menuItem}>
-          <a className={classes.menuLink} href='discordapp.com/users/184387451752546305'>
+          <a className={classes.menuLink} target="_blank" rel='noreferrer' href='discordapp.com/users/184387451752546305'>
             <FaDiscord />
           </a>
         </li>

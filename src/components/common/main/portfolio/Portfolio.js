@@ -24,7 +24,7 @@ function Portfolio({ sectionRef }) {
     <div className={classes.portfolio} ref={sectionRef}>
       <div className={classes.portfolioTitle}>
         <h2>Portfolio</h2>
-        <p>Here you can see all my projects that I have done by myself or with my team. HTML, CSS, Java Script and React were used on it</p>
+        <p>Here you can see all my projects that I have completed by myself or with my team. HTML, CSS, JavaScript and React were used on it.</p>
       </div>
       <div className={classes.portfolioFilters}>
         <ul className={classes.portfolioFiltersList}>

@@ -26,11 +26,11 @@ function About({ sectionRef }) {
           About
         </div>
         <div className={classes.aboutSection}>
-          <span>Hi there! I'm Anton, Towikk for friends ;) As a 21 age student I I'm trying to improve myself everyday in every aspect of my life, especially in coding)</span>
+          <span>Hi there! I'm Anton, Towikk for friends ;) As a 21 years old student I I'm trying to improve myself everyday in every aspect of my life, especially in coding.</span>
           <div className={classes.aboutWrapper}>
             <img src={image} className={classes.aboutImg} alt="about" />
             <div className={classes.aboutInfoContainer} >
-              <h2>Frontend developer/react developer</h2>
+              <h2>Frontend React Developer</h2>
 
               <ul className={classes.aboutInfo}>
                 <li className={classes.aboutInfoItem}> <FaCalendarDay /><span>Birthday: January 13 2002</span></li>
@@ -42,7 +42,7 @@ function About({ sectionRef }) {
                 <li className={classes.aboutInfoItem}> <FaUserCheck /><span>Specialisation: Frontend developer</span></li>
                 <li className={classes.aboutInfoItem}> <FaHandsHelping /><span>Freelance: yes</span></li>
               </ul>
-              <span>I am a student from Kyiv, who's thinking how to be better everyday. I like books (classique literature), some kind of sport and hookahs. Sometimes playing videogames and writing my own music. Don't you mind to hear that? You can text\call me anytime to ask especially questions for our future colobaration!
+              <span>I am a student from Kyiv, and I like improving everyday. I like books (classic literature), jogging and hookahs. Occasionally I play videogames and compose my own music, would you like to listen to that? You can text or call me anytime to ask any questions for our future collaboration!
               </span>
             </div>
           </div>

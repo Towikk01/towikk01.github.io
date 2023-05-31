@@ -73,6 +73,13 @@
           span {
             text-align: justify;
 
+            @media print {
+              font-size: 1rem;
+              padding: 0;
+            }
+
+
+
             @media (max-width:1023px) {
               padding-top: 0;
             }
@@ -89,6 +96,10 @@
             align-items: center;
             gap: 2vh;
 
+            @media print {
+              gap: 0;
+            }
+
             span {
               @media (max-width:767px) {}
             }
@@ -97,6 +108,12 @@
               margin: 0px;
               padding-bottom: 1.5rem;
               text-align: center;
+              font-family: Roboto;
+
+              @media print {
+                padding-bottom: 0;
+                margin: 0;
+              }
 
               @media (max-width:767px) {
                 padding-bottom: 0.5rem;
@@ -110,6 +127,10 @@
               display: flex;
               align-items: center;
               gap: 5px;
+
+              @media print {
+                font-size: 3.5vw;
+              }
 
               @media (max-width:1023px) {
                 font-size: 2.3vw;
@@ -152,6 +173,7 @@
       align-self: center;
       font-weight: 400;
 
+
       @media (max-width:1023px) {
         font-size: 3rem;
       }
@@ -189,6 +211,10 @@
 
 .mobile {
   display: none;
+
+  @media print {
+    display: none;
+  }
 
   @media (max-width:767px) {
     display: block;

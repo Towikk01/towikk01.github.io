@@ -43,7 +43,7 @@ function ScrollList({ sectionRefs }) {
       </li>
       <li className={classes.ScrollItem}>
         <button className={`${classes.ScrollLink} ${activeSection === 3 ? classes.Active : ''}`} onClick={(e) => onLinkClick(e, 3)}>
-          <FaClipboardList /> <span>Resume</span>
+          <FaClipboardList /> <span>Experience</span>
         </button>
       </li>
       <li className={classes.ScrollItem}>

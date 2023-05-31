@@ -1,14 +1,21 @@
-import './Menu.scss'
+import React from 'react';
+
+import { FaPrint } from 'react-icons/fa';
+
 import Links from "./Links";
 import ScrollList from './ScrollList';
+
 import image from '../../../images/ava.jpg'
-import React from 'react';
+
+
+import './Menu.scss'
 
 
 const classes = {
   menu: "menu",
   img: "img",
-  menuResp: 'menu-resp'
+  menuResp: 'menu-resp',
+  print: 'print'
 }
 
 function Menu({ sectionRefs }) {
@@ -21,7 +28,8 @@ function Menu({ sectionRefs }) {
       </div>
       <Links />
       <ScrollList sectionRefs={sectionRefs} />
-    </div>
+      <button className={classes.print} onClick={window.print}><FaPrint /></button>
+    </div >
   )
 }
 

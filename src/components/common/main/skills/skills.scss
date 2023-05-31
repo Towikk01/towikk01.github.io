@@ -84,6 +84,12 @@
   width: 90%;
   margin: 1px auto;
 
+  @media print {
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+  }
+
   @media (max-width:767px) {
     display: flex;
     flex-direction: column;
@@ -104,10 +110,19 @@
       background: #76aaea;
       height: 1.5rem;
 
+      @media print {
+        display: none;
+      }
+
       &-complete {
         width: 50%;
         background-color: wheat;
         height: 100%;
+
+        @media print {
+          display: none;
+        }
+
       }
     }
 

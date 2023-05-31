@@ -13,9 +13,9 @@ function Hero({ sectionRef }) {
 
   const [text, setText] = useState('Developer');
   useEffect(() => {
-    const list = ['frontend developer', 'freelancer', 'hookah master']
+    const list = ['frontend developer', 'freelancer']
     const interval = setInterval(() => {
-      setText(list[Math.floor(Math.random() * 3)])
+      setText(list[Math.floor(Math.random() * list.length)])
 
     }, 1000)
     return () => {

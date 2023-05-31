@@ -18,7 +18,7 @@ function Skills({ sectionRef }) {
         Skills
       </div>
       <div className={classes.skillsMobile}>
-        <span >I'm trying to improve myself in Frontend development, also I have knowlegde about HTML, CSS and GIT system! Here you can see mine progress on different technologies!</span>
+        <span >I constantly improve my Frontend development skills. My main stack is:  JS, React, HTML, CSS and Git system! You can see how I evaluate my skills in block below.</span>
         <div className={classes.progress}>
           <div className={classes.progressItem}>
             <div className={classes.progressText}>
@@ -39,7 +39,7 @@ function Skills({ sectionRef }) {
             </div>
           </div><div className={classes.progressItem}>
             <div className={classes.progressText}>
-              <span>Java Script</span>
+              <span>JavaScript</span>
               <span>80%</span>
             </div>
             <div className={classes.progressBar}>
@@ -55,7 +55,7 @@ function Skills({ sectionRef }) {
             </div>
           </div><div className={classes.progressItem}>
             <div className={classes.progressText}>
-              <span>GiT</span>
+              <span>Git</span>
               <span>100%</span>
             </div>
             <div className={classes.progressBar}>

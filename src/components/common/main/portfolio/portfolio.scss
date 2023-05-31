@@ -8,6 +8,10 @@
   align-items: center;
   padding: 0;
 
+  @media print {
+    display: none
+  }
+
   @media (max-width:1023px) {
     margin-left: 0;
     width: 100%;
@@ -19,6 +23,10 @@
     padding-top: 2vh;
     padding-bottom: 2vh;
     gap: 1vw;
+
+    @media print {
+      display: none
+    }
 
     @media (max-width:1439px) {
       display: grid;
@@ -40,6 +48,10 @@
     padding-top: 1rem;
     font-size: 2rem;
     text-align: center;
+
+    @media print {
+      display: none
+    }
 
     p {
       font-size: 1.5rem;
@@ -89,6 +101,10 @@
     display: inline-block;
     background-color: #dce1e1;
 
+    @media print {
+      display: none
+    }
+
     @media (max-width:1023px) {
       display: none;
     }
@@ -100,7 +116,14 @@
       list-style: none;
       gap: 1rem;
 
+      @media print {
+        display: none
+      }
+
       &-item {
+        @media print {
+          display: none
+        }
 
 
         button {
