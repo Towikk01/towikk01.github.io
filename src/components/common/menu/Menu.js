@@ -1,13 +1,13 @@
 import React from 'react';
 
-import { FaPrint } from 'react-icons/fa';
+import { FaPrint, FaSun } from 'react-icons/fa';
 
 import Links from "./Links";
 import ScrollList from './ScrollList';
 
+import { useTheme } from '../../hooks/theme';
+
 import image from '../../../images/ava.jpg'
-
-
 import './Menu.scss'
 
 
@@ -19,6 +19,9 @@ const classes = {
 }
 
 function Menu({ sectionRefs }) {
+
+  const { switchTheme } = useTheme()
+
   return (
     <div className={classes.menu}>
 
@@ -29,6 +32,7 @@ function Menu({ sectionRefs }) {
       <Links />
       <ScrollList sectionRefs={sectionRefs} />
       <button className={classes.print} onClick={window.print}><FaPrint /></button>
+      <button className={classes.print} onClick={switchTheme}><FaSun /></button>
     </div >
   )
 }

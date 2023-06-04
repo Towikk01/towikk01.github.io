@@ -1,0 +1,164 @@
+.dark {
+
+  .menu {
+    background-color: rgb(36, 35, 34);
+
+    &-list {
+      &-item {
+        a {
+          color: #cec9c9;
+          transition: .5s;
+
+          &:hover {
+            color: #76aaea;
+          }
+        }
+      }
+    }
+
+    &-resp {
+      h2 {
+        color: #cec9c9;
+      }
+    }
+  }
+
+  .scroll-menu-item-link {
+    color: #cec9c9;
+
+    &.active {
+      color: #76aaea;
+
+      &::after {
+        background-color: #76aaea;
+      }
+    }
+
+    &::after {
+      background-color: #cec9c9;
+      width: 20%;
+    }
+
+    &:hover,
+    :active,
+    :focus {
+      color: #76aaea;
+      transition: .5s;
+
+      &:after {
+        width: 100%;
+        background-color: #76aaea;
+      }
+    }
+  }
+
+  .print {
+    color: #cec9c9;
+
+    &:hover {
+      color: #76aaea;
+    }
+  }
+
+  .about {
+    background-color: #4d4d4d;
+    color: ghostwhite;
+
+    &-container-title {
+      color: ghostwhite;
+
+      &::after {
+        background-color: ghostwhite;
+      }
+    }
+
+
+  }
+
+  .kekus {
+    color: ghostwhite;
+
+    &:hover {
+      color: #76aaea;
+    }
+  }
+
+
+  .skills {
+    background-color: #333333;
+    color: ghostwhite;
+
+    &-title {
+      color: ghostwhite;
+
+      &::after {
+        background-color: ghostwhite;
+      }
+    }
+
+    .progress-item-bar {
+      background: ghostwhite;
+
+
+      &-complete {
+        background: #76aaea;
+      }
+    }
+  }
+
+  .resume {
+    background-color: #4d4d4d;
+    color: ghostwhite;
+
+    &-container-title {
+      color: ghostwhite;
+
+      &::after {
+        background-color: ghostwhite;
+      }
+    }
+  }
+
+  .portfolio {
+    background-color: #333333;
+    color: ghostwhite;
+
+    &-title {
+      h2 {
+        &::after {
+          background-color: ghostwhite;
+        }
+      }
+    }
+
+    &-filters {
+      background-color: #4d4d4d;
+
+      &-list-item {
+        background-color: transparent;
+      }
+    }
+  }
+
+  .contacts {
+    background-color: #4a4a4a;
+    color: ghostwhite;
+
+    &-info {
+      background-color: #333333;
+
+    }
+
+    &-form {
+      background-color: #333333;
+    }
+
+    &-title {
+      h3 {
+        &::after {
+          background-color: ghostwhite;
+        }
+      }
+    }
+  }
+}

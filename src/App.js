@@ -1,5 +1,6 @@
+import { useRef } from 'react';
 
-import './App.css';
+import './App.scss';
 import Menu from './components/common/menu/Menu'
 import Hero from './components/common/main/hero/Hero';
 import About from './components/common/main/about/About';
@@ -8,9 +9,15 @@ import Porfolio from './components/common/main/portfolio/Portfolio';
 import Contacts from './components/common/main/contact/Contacts';
 import Skills from './components/common/main/skills/Skills'
 
-import { useRef } from 'react';
+
+import { useTheme } from './components/hooks/theme';
+
+
+
 
 function App() {
+  const { theme } = useTheme();
+
   const sectionRefs = [
     useRef(null),
     useRef(null),
@@ -20,7 +27,7 @@ function App() {
     useRef(null)
   ]
   return (
-    <div className="App">
+    <div className={theme}>
       <Menu sectionRefs={sectionRefs} />
       <Hero sectionRef={sectionRefs[0]} />
       <About sectionRef={sectionRefs[1]} />
