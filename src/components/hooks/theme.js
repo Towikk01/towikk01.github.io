@@ -14,8 +14,8 @@ export const useTheme = () => {
   }, [theme]);
 
   useEffect(() => {
-    setTheme()
-  }, [])
+    document.body.className = theme;
+  }, [theme]);
 
   return { theme, switchTheme };
 }

@@ -135,7 +135,9 @@
       background-color: #4d4d4d;
 
       &-list-item {
-        background-color: transparent;
+        button {
+          background-color: transparent;
+        }
       }
     }
   }
