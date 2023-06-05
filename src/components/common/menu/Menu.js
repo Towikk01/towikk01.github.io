@@ -25,7 +25,7 @@ function Menu({ sectionRefs, toggleTheme }) {
 
 
   return (
-    <div className={classes.menu}>
+    <header className={classes.menu}>
       <div className={classes.menuResp}>
         <img className={classes.img} src={image} alt='Towikk' />
         <h2 style={{ textAlign: 'center' }}>Anton Masuytkin</h2>
@@ -36,7 +36,7 @@ function Menu({ sectionRefs, toggleTheme }) {
         <button className={classes.print} onClick={window.print}><FaPrint /></button>
         <button className={classes.theme} onClick={toggleTheme} ><FaSun /></button>
       </div>
-    </div >
+    </header>
   )
 }
 

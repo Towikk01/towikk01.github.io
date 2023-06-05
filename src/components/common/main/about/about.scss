@@ -19,12 +19,10 @@
     display: flex;
     flex-direction: column;
     align-items: center;
-    padding-top: 3rem;
+    padding-top: 1rem;
     gap: 1.5rem;
 
-    @media (max-width:1023px) {
-      padding-top: 1rem;
-    }
+
 
     &-section {
       font-size: 1.5vw;
@@ -61,8 +59,10 @@
           display: grid;
           grid-template-columns: repeat(2, 4fr);
           flex-wrap: wrap;
-          grid-gap: 20px;
+          grid-gap: 5px;
+          white-space: nowrap;
           transition: .5s;
+          row-gap: 1rem;
 
           @media (max-width:767px) {
             display: flex;
@@ -84,9 +84,7 @@
               padding-top: 0;
             }
 
-            @media (max-width:767px) {
-              padding-top: 0.5rem;
-            }
+
           }
 
 
