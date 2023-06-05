@@ -55,6 +55,20 @@
   .print {
     color: #cec9c9;
 
+
+
+    &:hover {
+      color: #76aaea;
+
+      &::after {
+        color: ghostwhite;
+      }
+    }
+  }
+
+  .theme {
+    color: #cec9c9;
+
     &:hover {
       color: #76aaea;
     }

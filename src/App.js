@@ -1,4 +1,4 @@
-import { useRef } from 'react';
+import { useState, useEffect, useRef } from 'react';
 
 import './App.scss';
 import Menu from './components/common/menu/Menu'
@@ -10,13 +10,13 @@ import Contacts from './components/common/main/contact/Contacts';
 import Skills from './components/common/main/skills/Skills'
 
 
-import { useTheme } from './components/hooks/theme';
+
+
 
 
 
 
 function App() {
-  const { theme } = useTheme();
 
   const sectionRefs = [
     useRef(null),
@@ -26,9 +26,20 @@ function App() {
     useRef(null),
     useRef(null)
   ]
+
+  const [theme, setTheme] = useState('light');
+  const toggleTheme = () => {
+    theme === 'light' ? setTheme('dark') : setTheme('light')
+  }
+  useEffect(() => {
+    document.body.className = theme;
+  }, [theme]);
+
+
   return (
-    <div className={theme}>
-      <Menu sectionRefs={sectionRefs} />
+
+    <div className={`App ${theme}`}>
+      <Menu toggleTheme={toggleTheme} sectionRefs={sectionRefs} />
       <Hero sectionRef={sectionRefs[0]} />
       <About sectionRef={sectionRefs[1]} />
       <Skills sectionRef={sectionRefs[2]} />
@@ -36,6 +47,7 @@ function App() {
       <Porfolio sectionRef={sectionRefs[4]} />
       <Contacts sectionRef={sectionRefs[5]} />
     </div>
+
   );
 }
 
