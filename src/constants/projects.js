@@ -1,30 +1,18 @@
 import furniture from '../images/furn.jpg';
-import img from '../images/2ch.jpg';
+import filmer from '../images/Filmer.png';
 
 
 const projects = [{
   name: "Furniture",
   type: "HTML",
   url: "https://test-task-furniture.netlify.app/",
-  image: furniture
+  image: furniture,
 },
 {
-  name: '2ch.hk',
+  name: 'Filmer',
   type: 'React',
-  url: '2ch.hk',
-  image: img
-},
-{
-  name: "Furniture",
-  type: "HTML",
-  url: "https://test-task-furniture.netlify.app/",
-  image: furniture
-},
-{
-  name: "Furniture",
-  type: "HTML",
-  url: "https://test-task-furniture.netlify.app/",
-  image: furniture
+  url: 'https://filmer-zeta.vercel.app/',
+  image: filmer
 }
 ];
 

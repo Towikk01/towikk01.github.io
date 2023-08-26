@@ -40,18 +40,18 @@ function Skills({ sectionRef }) {
           </div><div className={classes.progressItem}>
             <div className={classes.progressText}>
               <span>JavaScript</span>
-              <span>80%</span>
+              <span>100%</span>
             </div>
             <div className={classes.progressBar}>
-              <div style={{ width: "80%" }} className={classes.progressCompete}></div>
+              <div style={{ width: "100%" }} className={classes.progressCompete}></div>
             </div>
           </div><div className={classes.progressItem}>
             <div className={classes.progressText}>
               <span>React</span>
-              <span>50%</span>
+              <span>100%</span>
             </div>
             <div className={classes.progressBar}>
-              <div style={{ width: "50%" }} className={classes.progressCompete}></div>
+              <div style={{ width: "100%" }} className={classes.progressCompete}></div>
             </div>
           </div><div className={classes.progressItem}>
             <div className={classes.progressText}>
@@ -61,13 +61,32 @@ function Skills({ sectionRef }) {
             <div className={classes.progressBar}>
               <div style={{ width: "100%" }} className={classes.progressCompete}></div>
             </div>
-          </div><div className={classes.progressItem}>
+          </div>
+          <div className={classes.progressItem}>
             <div className={classes.progressText}>
               <span>Bootstrap</span>
               <span>50%</span>
             </div>
             <div className={classes.progressBar}>
               <div style={{ width: "50%" }} className={classes.progressCompete}></div>
+            </div>
+          </div>
+          <div className={classes.progressItem}>
+            <div className={classes.progressText}>
+              <span>Redux Toolkit</span>
+              <span>100%</span>
+            </div>
+            <div className={classes.progressBar}>
+              <div style={{ width: "100%" }} className={classes.progressCompete}></div>
+            </div>
+          </div>
+          <div className={classes.progressItem}>
+            <div className={classes.progressText}>
+              <span>TypeScript</span>
+              <span>100%</span>
+            </div>
+            <div className={classes.progressBar}>
+              <div style={{ width: "100%" }} className={classes.progressCompete}></div>
             </div>
           </div>
         </div>
