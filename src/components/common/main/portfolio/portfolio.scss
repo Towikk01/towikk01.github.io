@@ -1,147 +1,144 @@
 .portfolio {
-  margin-left: 10%;
-  width: 90%;
-  // min-height: 100vh;
-  background-color: #ddd9d9;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  padding: 0;
+	margin-left: 10%;
+	width: 90%;
+	// min-height: 100vh;
+	background-color: #fef9f5;
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	padding: 0;
 
-  @media print {
-    display: none
-  }
+	@media print {
+		display: none;
+	}
 
-  @media (max-width:1023px) {
-    margin-left: 0;
-    width: 100%;
-  }
+	@media (max-width: 1023px) {
+		margin-left: 0;
+		width: 100%;
+	}
 
-  &-items {
-    display: flex;
-    justify-content: space-evenly;
-    padding-top: 2vh;
-    padding-bottom: 2vh;
-    gap: 1vw;
+	&-items {
+		display: grid;
+					grid-template-columns: repeat(4, 1fr);
 
-    @media print {
-      display: none
-    }
+		justify-content: space-evenly;
+		padding-top: 2vh;
+		padding-bottom: 2vh;
+		gap: 1vw;
 
-    @media (max-width:1439px) {
-      display: grid;
-      grid-template-columns: repeat(2, 2fr);
-    }
+		@media print {
+			display: none;
+		}
 
-    @media (max-width:767px) {
-      display: flex;
-      padding-top: 1rem;
-      padding-bottom: 1rem;
-      gap: 1rem;
-      flex-direction: column;
-    }
-  }
+		@media (max-width: 1439px) {
+			display: grid;
+			grid-template-columns: repeat(2, 2fr);
+		}
 
+		@media (max-width: 767px) {
+			display: flex;
+			padding-top: 1rem;
+			padding-bottom: 1rem;
+			gap: 1rem;
+			flex-direction: column;
+		}
+	}
 
+	&-title {
+		padding-top: 1rem;
+		font-size: 2rem;
+		text-align: center;
 
-  &-title {
-    padding-top: 1rem;
-    font-size: 2rem;
-    text-align: center;
+		@media print {
+			display: none;
+		}
 
-    @media print {
-      display: none
-    }
+		p {
+			font-size: 1.5rem;
 
-    p {
-      font-size: 1.5rem;
+			@media (max-width: 1023px) {
+				font-size: 2.5vw;
+				padding: 0 1rem;
+			}
 
-      @media (max-width:1023px) {
-        font-size: 2.5vw;
-        padding: 0 1rem;
-      }
+			@media (max-width: 767px) {
+				font-size: 1rem;
+			}
+		}
 
-      @media (max-width:767px) {
-        font-size: 1rem;
-      }
-    }
+		h2 {
+			position: relative;
+			display: inline;
+			font-weight: 400;
 
+			@media (max-width: 1023px) {
+				font-size: 3rem;
+			}
 
-    h2 {
-      position: relative;
-      display: inline;
-      font-weight: 400;
+			@media (max-width: 767px) {
+				font-size: 2rem;
+			}
 
-      @media (max-width:1023px) {
-        font-size: 3rem;
-      }
+			&::after {
+				position: absolute;
+				content: '';
+				background-color: black;
+				width: 80%;
+				left: 0px;
+				bottom: -0.3rem;
+				transition: width 0.5s ease-in-out;
+				height: 0.1rem;
+			}
+		}
+	}
 
-      @media (max-width:767px) {
-        font-size: 2rem;
-      }
+	&-filters {
+		display: inline-block;
 
-      &::after {
-        position: absolute;
-        content: '';
-        background-color: black;
-        width: 80%;
-        left: 0px;
-        bottom: -.3rem;
-        transition: width 0.5s ease-in-out;
-        height: .1rem;
+		@media print {
+			display: none;
+		}
 
-      }
+		@media (max-width: 1023px) {
+			display: none;
+		}
 
-    }
-  }
+		&-list {
+			padding: 0 1rem;
+			display: flex;
+			list-style: none;
+			gap: 1rem;
 
-  &-filters {
-    border: 2px solid #76aaea;
-    border-radius: 50px;
-    display: inline-block;
-    background-color: #dce1e1;
+			@media print {
+				display: none;
+			}
 
-    @media print {
-      display: none
-    }
+			&-item {
+				@media print {
+					display: none;
+				}
 
-    @media (max-width:1023px) {
-      display: none;
-    }
+				button {
+					display: inline-block;
+					padding: 10px 20px;
+					font-size: 18px;
+					background-color: #3498db;
+					color: #fff;
+					text-decoration: none;
+					border: none;
+					border-radius: 5px;
+					cursor: pointer;
+					transition: background-color 0.3s, transform 0.2s ease-in-out;
+					margin: 5px;
 
-
-    &-list {
-      padding: 0 1rem;
-      display: flex;
-      list-style: none;
-      gap: 1rem;
-
-      @media print {
-        display: none
-      }
-
-      &-item {
-        @media print {
-          display: none
-        }
-
-
-        button {
-          border: none;
-          color: gray;
-          font-size: 1.2rem;
-          background-color: #dce1e1;
-          cursor: pointer;
-          transition: .5s;
-
-
-
-          &:hover {
-            color: #76aaea;
-            cursor: pointer;
-          }
-        }
-      }
-    }
-  }
+					&:hover {
+						color: #76aaea;
+						cursor: pointer;
+						background-color: #2980b9;
+						transform: scale(1.05);
+					}
+				}
+			}
+		}
+	}
 }

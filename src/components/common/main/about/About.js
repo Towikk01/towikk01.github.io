@@ -26,7 +26,7 @@ function About({ sectionRef }) {
           About
         </div>
         <div className={classes.aboutSection}>
-          <span>Hi there! I'm Anton, Towikk for friends ;) As a 21 years old student I I'm trying to improve myself everyday in every aspect of my life, especially in coding.</span>
+          <span>Hi there! I'm Anton, Towikk for friends. I'm trying to improve myself everyday in every aspect of my life, especially in coding.</span>
           <div className={classes.aboutWrapper}>
             <img src={image} className={classes.aboutImg} alt="about" />
             <div className={classes.aboutInfoContainer} >
@@ -34,15 +34,13 @@ function About({ sectionRef }) {
 
               <ul className={classes.aboutInfo}>
                 <li className={classes.aboutInfoItem}> <FaCalendarDay /><span>Birthday: January 13 2002</span></li>
-                <li className={classes.aboutInfoItem}> <FaArrowCircleUp /><span>Age: 21</span></li>
-                <li className={classes.aboutInfoItem}> <FaGlobeEurope /><span>Website: towikk01</span></li>
+                <li className={classes.aboutInfoItem}> <FaArrowCircleUp /><span>Age: 22</span></li>
                 <li className={classes.aboutInfoItem}> <FaPhone /><span>Phone: <a className={classes.kekus} href='tel:+380664190682'>+38 (066) 41-90-682</a></span></li>
                 <li className={classes.aboutInfoItem}> <FaMapMarkedAlt /><span>City: Kyiv, Ukraine</span></li>
                 <li className={classes.aboutInfoItem}> <FaMailBulk /><span>Mail: <a className={classes.kekus} href="mailto:anton.masuytkin@gmail.com"> anton.masuytkin@gmail.com</a></span></li>
-                <li className={classes.aboutInfoItem}> <FaUserCheck /><span>Specialisation: Frontend developer</span></li>
-                <li className={classes.aboutInfoItem}> <FaHandsHelping /><span>Freelance: yes</span></li>
+                <li className={classes.aboutInfoItem}> <FaUserCheck /><span>Position: Frontend & Mobile Developer</span></li>
               </ul>
-              <span>I am a student from Kyiv, and I like improving everyday. I like books (classic literature), jogging and hookahs. Occasionally I play videogames and compose my own music, would you like to listen to that? You can text or call me anytime to ask any questions for our future collaboration!
+              <span style={{textAlign: 'start'}}>I am a guy from Kyiv, and I like improving everyday. I like books (classic literature), going to gym. Occasionally I play videogames and compose my own music. You can text or call me anytime to ask any questions for our future collaboration!
               </span>
             </div>
           </div>

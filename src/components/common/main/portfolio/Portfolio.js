@@ -17,14 +17,14 @@ function Portfolio({ sectionRef }) {
   };
 
   const [tab, setTab] = useState(null);
-  const shownProjects = tab ? projects.filter(item => item.type == tab) : projects;
+  const shownProjects = tab ? projects.filter(item => item.type === tab) : projects;
 
 
   return (
     <div className={classes.portfolio} ref={sectionRef}>
       <div className={classes.portfolioTitle}>
         <h2>Portfolio</h2>
-        <p>Here you can see all my projects that I have completed by myself or with my team. HTML, CSS, JavaScript and React were used on it.</p>
+        <p>Here you can see all my projects that I have completed by myself or with my team. React, Next.js, Flutter and Dart - my favorites.</p>
       </div>
       <div className={classes.portfolioFilters}>
         <ul className={classes.portfolioFiltersList}>
@@ -32,11 +32,14 @@ function Portfolio({ sectionRef }) {
             setTab(null)
           }}>All</button></li>
           <li className={classes.portfolioFiltersItem}><button onClick={() => {
-            setTab('HTML')
-          }}>HTML</button></li>
-          <li className={classes.portfolioFiltersItem}><button onClick={() => {
             setTab('React')
           }}>React</button></li>
+          <li className={classes.portfolioFiltersItem}><button onClick={() => {
+            setTab('Next.js')
+          }}>Next.js</button></li>
+          <li className={classes.portfolioFiltersItem}><button onClick={() => {
+            setTab('Flutter')
+          }}>Flutter</button></li>
         </ul>
       </div>
       <div className={classes.portfolioItems}>

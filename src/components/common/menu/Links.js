@@ -26,11 +26,6 @@ function Links() {
             <FaLinkedinIn />
           </a>
         </li>
-        <li className={classes.menuItem}>
-          <a className={classes.menuLink} target="_blank" rel='noreferrer' href='discordapp.com/users/184387451752546305'>
-            <FaDiscord />
-          </a>
-        </li>
       </ul>
     </>
 

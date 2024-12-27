@@ -9,13 +9,6 @@ import Porfolio from './components/common/main/portfolio/Portfolio';
 import Contacts from './components/common/main/contact/Contacts';
 import Skills from './components/common/main/skills/Skills'
 
-
-
-
-
-
-
-
 function App() {
 
   const sectionRefs = [
@@ -27,7 +20,7 @@ function App() {
     useRef(null)
   ]
 
-  const [theme, setTheme] = useState('light');
+  const [theme, setTheme] = useState('dark');
   const toggleTheme = () => {
     theme === 'light' ? setTheme('dark') : setTheme('light')
   }
@@ -37,8 +30,7 @@ function App() {
 
 
   return (
-
-    <div className={`App ${theme}`}>
+    <main className={`App ${theme}`}>
       <Menu toggleTheme={toggleTheme} sectionRefs={sectionRefs} />
       <Hero sectionRef={sectionRefs[0]} />
       <About sectionRef={sectionRefs[1]} />
@@ -46,7 +38,7 @@ function App() {
       <Resume sectionRef={sectionRefs[3]} />
       <Porfolio sectionRef={sectionRefs[4]} />
       <Contacts sectionRef={sectionRefs[5]} />
-    </div>
+    </main>
 
   );
 }

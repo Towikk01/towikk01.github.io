@@ -12,16 +12,42 @@ const classes = {
 function Hero({ sectionRef }) {
 
   const [text, setText] = useState('Developer');
-  useEffect(() => {
-    const list = ['frontend developer', 'freelancer']
-    const interval = setInterval(() => {
-      setText(list[Math.floor(Math.random() * list.length)])
+  const words = ['frontend developer', 'freelancer'];
+  const [wordIndex, setWordIndex] = useState(0);
+  const [charIndex, setCharIndex] = useState(0);
+  const [isDeleting, setIsDeleting] = useState(false);
 
-    }, 1000)
+  useEffect(() => {
+    const typingEffect = () => {
+      const currentWord = words[wordIndex];
+      const currentChar = currentWord.charAt(charIndex);
+
+      setText(isDeleting ? currentWord.substring(0, charIndex) : currentWord.substring(0, charIndex + 1));
+
+      if (isDeleting) {
+        setCharIndex(charIndex - 1);
+      } else {
+        setCharIndex(charIndex + 1);
+      }
+
+      if (isDeleting && charIndex === -1) {
+        setIsDeleting(false);
+        setWordIndex((wordIndex + 1) % words.length);
+      }
+
+      if (!isDeleting && charIndex === currentWord.length) {
+        setIsDeleting(true);
+      }
+    };
+
+    const interval = setInterval(typingEffect, 100); // Скорость набора текста
+
     return () => {
-      clearInterval(interval)
-    }
-  }, []);
+      clearInterval(interval);
+    };
+  }, [wordIndex, charIndex, isDeleting]);
+
+
 
   return (
     <>

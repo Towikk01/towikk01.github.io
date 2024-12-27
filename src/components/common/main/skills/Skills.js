@@ -18,7 +18,7 @@ function Skills({ sectionRef }) {
         Skills
       </div>
       <div className={classes.skillsMobile}>
-        <span >I constantly improve my Frontend development skills. My main stack is:  JS, React, HTML, CSS and Git system! You can see how I evaluate my skills in block below.</span>
+        <span >I constantly improve my Frontend development skills. My main stack is:  JS, React, HTML, CSS and Redux! You can see how I evaluate my skills in block below.</span>
         <div className={classes.progress}>
           <div className={classes.progressItem}>
             <div className={classes.progressText}>
@@ -74,6 +74,42 @@ function Skills({ sectionRef }) {
           <div className={classes.progressItem}>
             <div className={classes.progressText}>
               <span>Redux Toolkit</span>
+              <span>100%</span>
+            </div>
+            <div className={classes.progressBar}>
+              <div style={{ width: "100%" }} className={classes.progressCompete}></div>
+            </div>
+          </div>
+          <div className={classes.progressItem}>
+            <div className={classes.progressText}>
+              <span>Flutter</span>
+              <span>100%</span>
+            </div>
+            <div className={classes.progressBar}>
+              <div style={{ width: "100%" }} className={classes.progressCompete}></div>
+            </div>
+          </div>
+          <div className={classes.progressItem}>
+            <div className={classes.progressText}>
+              <span>Next.js</span>
+              <span>100%</span>
+            </div>
+            <div className={classes.progressBar}>
+              <div style={{ width: "100%" }} className={classes.progressCompete}></div>
+            </div>
+          </div>
+          <div className={classes.progressItem}>
+            <div className={classes.progressText}>
+              <span>GSAP</span>
+              <span>100%</span>
+            </div>
+            <div className={classes.progressBar}>
+              <div style={{ width: "100%" }} className={classes.progressCompete}></div>
+            </div>
+          </div>
+          <div className={classes.progressItem}>
+            <div className={classes.progressText}>
+              <span>Dart</span>
               <span>100%</span>
             </div>
             <div className={classes.progressBar}>
