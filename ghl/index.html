@@ -1,0 +1,350 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Anton — GHL & Voice AI Builder</title>
+<meta name="description" content="GoHighLevel builds, integrations and production voice AI agents for agencies. Async, fixed scope, fast turnaround.">
+<style>
+  :root {
+    --bg: #0d0f12;
+    --surface: #15181d;
+    --surface-2: #1b1f26;
+    --line: #262b33;
+    --text: #e8eaed;
+    --muted: #9aa3ae;
+    --accent: #5eead4;
+    --accent-2: #a5b4fc;
+    --warn: #fbbf24;
+    --radius: 14px;
+  }
+  *, *::before, *::after { box-sizing: border-box; }
+  html { -webkit-text-size-adjust: 100%; }
+  body {
+    margin: 0;
+    background: var(--bg);
+    color: var(--text);
+    font: 16px/1.6 -apple-system, BlinkMacSystemFont, "Segoe UI", Inter, Roboto, Helvetica, Arial, sans-serif;
+    overflow-x: hidden;
+    overflow-wrap: anywhere;
+  }
+  img, svg, video, table, pre { max-width: 100%; }
+  a { color: var(--accent); text-decoration: none; }
+  a:hover { text-decoration: underline; }
+  .wrap { width: 100%; max-width: 960px; margin: 0 auto; padding: 0 16px; }
+  section { padding: 48px 0; border-top: 1px solid var(--line); }
+  h1, h2, h3 { line-height: 1.2; margin: 0 0 12px; letter-spacing: -0.01em; }
+  h1 { font-size: clamp(30px, 7vw, 48px); }
+  h2 { font-size: clamp(22px, 5vw, 30px); }
+  h3 { font-size: 19px; }
+  p { margin: 0 0 12px; }
+  .muted { color: var(--muted); }
+  .eyebrow {
+    display: inline-block; font-size: 13px; font-weight: 600; letter-spacing: .08em;
+    text-transform: uppercase; color: var(--accent); margin-bottom: 14px;
+  }
+
+  /* hero */
+  header.hero { padding: 56px 0 40px; position: relative; overflow: hidden; }
+  header.hero::before {
+    content: ""; position: absolute; inset: -40% -20% auto auto; width: 520px; height: 520px; max-width: 120vw;
+    background: radial-gradient(closest-side, rgba(94,234,212,.16), transparent 70%);
+    pointer-events: none;
+  }
+  .lead { font-size: clamp(17px, 3.6vw, 20px); color: #cfd4da; max-width: 680px; }
+  .cta-row { display: flex; flex-wrap: wrap; gap: 10px; margin-top: 22px; }
+  .btn {
+    display: inline-block; padding: 12px 18px; border-radius: 10px; font-weight: 600;
+    background: var(--accent); color: #062421; max-width: 100%;
+  }
+  .btn.ghost { background: transparent; color: var(--text); border: 1px solid var(--line); }
+  .btn:hover { text-decoration: none; filter: brightness(1.08); }
+
+  .stats { display: grid; grid-template-columns: 1fr; gap: 12px; margin-top: 32px; }
+  .stat {
+    background: var(--surface); border: 1px solid var(--line); border-radius: var(--radius);
+    padding: 18px; min-width: 0;
+  }
+  .stat b { display: block; font-size: 30px; line-height: 1.1; color: var(--accent); margin-bottom: 6px; }
+  .stat span { color: var(--muted); font-size: 14px; }
+
+  /* cases */
+  .cases { display: grid; gap: 16px; margin-top: 20px; }
+  .case {
+    background: var(--surface); border: 1px solid var(--line); border-radius: var(--radius);
+    padding: 20px; min-width: 0;
+  }
+  .case-head { display: flex; flex-wrap: wrap; align-items: baseline; gap: 6px 12px; margin-bottom: 10px; }
+  .case-head h3 { margin: 0; }
+  .tag-client { font-size: 13px; color: var(--muted); }
+  .case dl { margin: 0; display: grid; gap: 10px; }
+  .case dt {
+    font-size: 12px; font-weight: 700; letter-spacing: .08em; text-transform: uppercase; color: var(--accent-2);
+  }
+  .case dd { margin: 2px 0 0; }
+  .case ul { margin: 4px 0 0; padding-left: 18px; }
+  .case li { margin-bottom: 4px; }
+  .result {
+    background: var(--surface-2); border-left: 3px solid var(--accent); border-radius: 8px;
+    padding: 10px 12px; margin-top: 2px;
+  }
+  .chips { display: flex; flex-wrap: wrap; gap: 6px; margin-top: 14px; }
+  .chip {
+    font-size: 12.5px; padding: 4px 10px; border-radius: 999px; background: var(--surface-2);
+    border: 1px solid var(--line); color: #c9ced5; white-space: nowrap; max-width: 100%;
+    overflow: hidden; text-overflow: ellipsis;
+  }
+  .also { margin-top: 16px; color: var(--muted); font-size: 15px; }
+
+  /* flow diagram (css only) */
+  .flow { display: flex; flex-wrap: wrap; align-items: center; gap: 6px; margin: 10px 0 2px; font-size: 13px; }
+  .flow span { padding: 4px 9px; border-radius: 6px; background: #10231f; color: var(--accent); border: 1px solid #1d3d37; }
+  .flow i { font-style: normal; color: var(--muted); }
+
+  /* services */
+  .services { display: grid; gap: 16px; margin-top: 20px; }
+  .svc {
+    background: var(--surface); border: 1px solid var(--line); border-radius: var(--radius);
+    padding: 20px; min-width: 0; display: flex; flex-direction: column;
+  }
+  .svc .fmt { font-size: 13px; color: var(--warn); font-weight: 600; margin-bottom: 8px; }
+  .svc ul { margin: 6px 0 0; padding-left: 18px; }
+  .svc li { margin-bottom: 4px; }
+
+  /* how */
+  .steps { counter-reset: s; display: grid; gap: 12px; margin-top: 20px; padding: 0; list-style: none; }
+  .steps li {
+    counter-increment: s; position: relative; padding: 16px 16px 16px 56px;
+    background: var(--surface); border: 1px solid var(--line); border-radius: var(--radius); min-width: 0;
+  }
+  .steps li::before {
+    content: counter(s); position: absolute; left: 16px; top: 16px; width: 28px; height: 28px;
+    border-radius: 50%; background: var(--surface-2); border: 1px solid var(--accent); color: var(--accent);
+    display: grid; place-items: center; font-weight: 700; font-size: 14px;
+  }
+  .rules { display: grid; gap: 10px; margin-top: 18px; }
+  .rule { display: flex; gap: 10px; align-items: flex-start; }
+  .rule::before { content: "✓"; color: var(--accent); font-weight: 700; flex: none; }
+
+  /* contact */
+  .contact-box {
+    background: linear-gradient(135deg, #12201e, #161a24); border: 1px solid #23413b;
+    border-radius: var(--radius); padding: 24px; margin-top: 16px;
+  }
+  footer { padding: 28px 0 40px; color: var(--muted); font-size: 13px; border-top: 1px solid var(--line); }
+
+  @media (min-width: 640px) {
+    .stats { grid-template-columns: repeat(3, minmax(0, 1fr)); }
+    .services { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+    .case { padding: 24px; }
+  }
+  @media (min-width: 900px) {
+    .services { grid-template-columns: repeat(4, minmax(0, 1fr)); }
+  }
+</style>
+</head>
+<body>
+
+<header class="hero">
+  <div class="wrap">
+    <div class="eyebrow">GoHighLevel · Voice AI · Automation</div>
+    <h1>Anton — GHL builder and voice AI engineer for agencies</h1>
+    <p class="lead">I build the part of GoHighLevel your VA can't: API integrations, marketplace apps, custom JS, dashboards, and voice agents that take real calls. You hand me a scope, I ship it white-label under your brand. Based in Kyiv, working async with US agencies.</p>
+    <div class="cta-row">
+      <a class="btn" href="#contact">Send me a scope</a>
+      <a class="btn ghost" href="#cases">See the work</a>
+    </div>
+    <div class="stats">
+      <div class="stat"><b>223 → 19</b><span>live calls in 3 days on one production voice agent, only 19 handed to a human</span></div>
+      <div class="stat"><b>3× caught</b><span>per-minute cost spike ($0.077 → $0.223) found by measurement and rolled back the same day</span></div>
+      <div class="stat"><b>~95%</b><span>of a white-label GHL interface localized with one line of agency-level custom JS</span></div>
+    </div>
+  </div>
+</header>
+
+<main>
+<section id="cases">
+  <div class="wrap">
+    <div class="eyebrow">Selected work</div>
+    <h2>Shipped and running in production</h2>
+    <p class="muted">Client names are withheld unless the brand is public. Every number below comes from my own logs.</p>
+
+    <div class="cases">
+
+      <article class="case">
+        <div class="case-head"><h3>24/7 voice support for a US logistics SaaS</h3><span class="tag-client">US trucking software company</span></div>
+        <div class="flow"><span>Phone line</span><i>→</i><span>ElevenLabs agent</span><i>→</i><span>n8n</span><i>→</i><span>Helpdesk ticket</span><i>→</i><span>Team alert</span></div>
+        <dl>
+          <div><dt>Problem</dt><dd>Support and safety lines needed to answer around the clock, in the caller's language, and only wake a human when it actually matters.</dd></div>
+          <div><dt>What I did</dt><dd>
+            <ul>
+              <li>Built and run two production voice agents (customer support and a safety line) with post-call routing into a helpdesk and team chat.</li>
+              <li>Language handling: the agent detects the caller's language itself instead of relying on separate numbers per language. Zero language-related refusals on live calls after the fix.</li>
+              <li>Benchmarked a RAG knowledge base before keeping it. It broke the prompt cache, so I reverted on data, not on gut feel.</li>
+            </ul>
+          </dd></div>
+          <div><dt>Result</dt><dd class="result">223 live calls over 3 days on one agent: 157 closed with a ticket, 19 transferred to a person. The RAG rollback kept cost at $0.077/min instead of $0.223/min and median response at 2.9 s instead of 4.3 s.</dd></div>
+        </dl>
+        <div class="chips"><span class="chip">ElevenLabs Conversational AI</span><span class="chip">n8n</span><span class="chip">Twilio</span><span class="chip">Helpdesk API</span><span class="chip">Cloudflare Workers</span><span class="chip">Alerting</span></div>
+      </article>
+
+      <article class="case">
+        <div class="case-head"><h3>White-label GHL platform, localized and packaged</h3><span class="tag-client">UR Brave · urbrave.com</span></div>
+        <dl>
+          <div><dt>Problem</dt><dd>A white-label GHL agency selling in Ukraine. GHL has no Ukrainian UI, and the third-party translator widget also translated customer data (tags, timestamps).</dd></div>
+          <div><dt>What I did</dt><dd>
+            <ul>
+              <li>Own localization engine with a UK | EN switch, built from GHL's native UI strings. Installed as one line of agency-level custom JS; customer data stays untouched.</li>
+              <li>White-label desktop app for Mac, Windows and Linux, with the same custom JS running inside.</li>
+              <li>29-page marketing site. Traced an iPhone Safari freeze by profiling on the physical device, fixed it, and replaced 11 GPU-heavy blur effects that made mobile scrolling lag.</li>
+            </ul>
+          </dd></div>
+          <div><dt>Result</dt><dd class="result">Live for every sub-account since October 2026 with ~95% screen coverage. Site back to 60 fps on iPhone.</dd></div>
+        </dl>
+        <div class="chips"><span class="chip">GoHighLevel</span><span class="chip">Agency custom JS</span><span class="chip">Electron</span><span class="chip">React</span><span class="chip">Cloudflare Workers</span></div>
+      </article>
+
+      <article class="case">
+        <div class="case-head"><h3>GHL marketplace app: click-to-call telephony</h3><span class="tag-client">UR Brave · Ringostat integration</span></div>
+        <dl>
+          <div><dt>Problem</dt><dd>Agencies on GHL that use Ringostat (a popular telephony provider in Ukraine) had no call button in the contact card and no call history in the CRM.</dd></div>
+          <div><dt>What I did</dt><dd>
+            <ul>
+              <li>Self-install marketplace app: OAuth, external auth, multi-tenant storage with encrypted keys, settings page with SSO, billing logic.</li>
+              <li>"Call" button in the contact card; webhooks write the call and transcript into the contact's notes.</li>
+              <li>Load-tested the free Cloudflare tier before launch so the client knew exactly when hosting starts to cost money.</li>
+              <li>Same multi-tenant pattern reused for a shipment-tracking integration with the national carrier (Nova Poshta): status changes land on the contact and deal, 22 automated tests.</li>
+            </ul>
+          </dd></div>
+          <div><dt>Result</dt><dd class="result">Live (private listing) since 16 Oct 2026, first real call went through the same day. Measured ceiling on the free tier: about 4–5k calls per day.</dd></div>
+        </dl>
+        <div class="chips"><span class="chip">GHL Marketplace</span><span class="chip">OAuth 2.0</span><span class="chip">GHL API v2</span><span class="chip">Cloudflare Workers + D1</span><span class="chip">Webhooks</span></div>
+      </article>
+
+      <article class="case">
+        <div class="case-head"><h3>E-commerce sales and distributor accounting inside GHL</h3><span class="tag-client">Apparel brand on WooCommerce</span></div>
+        <dl>
+          <div><dt>Problem</dt><dd>Orders lived in WooCommerce, the CRM showed wrong numbers, and distributor shipments, payments and stock were tracked by hand.</dd></div>
+          <div><dt>What I did</dt><dd>
+            <ul>
+              <li>Sync worker pulling orders into GHL custom objects, with currency conversion at the national bank rate on the payment date.</li>
+              <li>Two dashboard options: native GHL widgets and an embedded custom dashboard (revenue, countries, cities, traffic source).</li>
+              <li>Audited every figure against WooCommerce as the source of truth: shipping split out of revenue, card fees in their own field, refunds handled correctly.</li>
+              <li>Distributor pipeline with debt and stock tracking, CRM stock kept in sync with the store, PDF waybills saved to the media library.</li>
+            </ul>
+          </dd></div>
+          <div><dt>Result</dt><dd class="result">684 store orders reconciled against the CRM. Revenue, distributor debt and stock now live in the CRM instead of spreadsheets.</dd></div>
+        </dl>
+        <div class="chips"><span class="chip">GHL custom objects</span><span class="chip">GHL dashboards</span><span class="chip">WooCommerce REST</span><span class="chip">Cloudflare Workers + D1</span></div>
+      </article>
+
+      <article class="case">
+        <div class="case-head"><h3>Recruiting bot and sales ops on GHL</h3><span class="tag-client">UR Brave · sales recruiting community</span></div>
+        <dl>
+          <div><dt>Problem</dt><dd>A closed community for sales professionals needed candidates and hiring companies to land in the CRM automatically. Separately, the sales team needed a clean, enriched lead base that feeds itself into the pipeline.</dd></div>
+          <div><dt>What I did</dt><dd>
+            <ul>
+              <li>Telegram bot: candidate or HR questionnaire → contact and deal in GHL with no duplicates, moderation, an 8-step vacancy builder, applications forwarded to the vacancy author.</li>
+              <li>AI chat agent on the community site that books companies into meetings.</li>
+              <li>Enriched the sales database from the public company registry: decision-maker role filled for 4,699 contacts (previously 3).</li>
+              <li>Auto-feeder: a 4,294-lead queue drips into the pipeline 40 per day, one company = one deal, plus smart lists and 24 reply snippets by niche.</li>
+            </ul>
+          </dd></div>
+          <div><dt>Result</dt><dd class="result">Bot in production with 192 automated tests; 14 bugs caught and fixed in QA. Every change shipped with a tested rollback.</dd></div>
+        </dl>
+        <div class="chips"><span class="chip">Telegram Bot API</span><span class="chip">GHL API v2</span><span class="chip">GHL Workflows</span><span class="chip">Conversation AI</span><span class="chip">Cloudflare D1</span></div>
+      </article>
+
+    </div>
+    <p class="also"><strong>Also shipped:</strong> the driver mobile app for a US trucking dispatch platform (Expo / React Native): loads, statuses, proof of delivery with progress, document scanner to PDF, offline queue, chat. 12 merge requests through review in one day, 757 unit tests, end-to-end flows in Maestro.</p>
+  </div>
+</section>
+
+<section id="services">
+  <div class="wrap">
+    <div class="eyebrow">Services</div>
+    <h2>What you can hand me</h2>
+    <div class="services">
+      <div class="svc">
+        <div class="fmt">Fixed price · per scope</div>
+        <h3>GHL build</h3>
+        <ul>
+          <li>Sub-account setup, pipelines, workflows, forms, calendars</li>
+          <li>Custom fields, custom objects, associations</li>
+          <li>Dashboards and reporting</li>
+          <li>Snapshots you can resell</li>
+        </ul>
+      </div>
+      <div class="svc">
+        <div class="fmt">Monthly retainer</div>
+        <h3>White-label GHL dev</h3>
+        <ul>
+          <li>Your overflow queue, delivered under your brand</li>
+          <li>API integrations, webhooks, agency custom JS</li>
+          <li>Marketplace apps with OAuth</li>
+          <li>Fixes and small changes inside the month</li>
+        </ul>
+      </div>
+      <div class="svc">
+        <div class="fmt">Setup fee</div>
+        <h3>Voice agent setup</h3>
+        <ul>
+          <li>Inbound receptionist, support or lead callback</li>
+          <li>Booking and data written into GHL</li>
+          <li>Human handoff rules, multilingual</li>
+          <li>Tested on real calls before go-live</li>
+        </ul>
+      </div>
+      <div class="svc">
+        <div class="fmt">Monthly care</div>
+        <h3>Voice agent care</h3>
+        <ul>
+          <li>Weekly review of real calls</li>
+          <li>Prompt and routing fixes</li>
+          <li>Cost-per-minute and latency watch</li>
+          <li>Short monthly report</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section id="how">
+  <div class="wrap">
+    <div class="eyebrow">How I work</div>
+    <h2>Async, fixed scope, visible progress</h2>
+    <ol class="steps">
+      <li><strong>You send the scope.</strong> A Loom, a doc or a few lines in Slack is enough. I come back with questions and a fixed quote, usually within 24 hours.</li>
+      <li><strong>I build in your account.</strong> Small first milestone so you see working results early, not a big reveal at the end.</li>
+      <li><strong>You get written updates.</strong> Short text updates with screenshots or a screen recording. No status meetings needed.</li>
+      <li><strong>Hand-off with docs.</strong> What was built, where it lives, how to roll it back.</li>
+    </ol>
+    <div class="rules">
+      <div class="rule">Fixed price per milestone or a monthly retainer. No hourly screen trackers.</div>
+      <div class="rule">Replies within 12–24 hours on weekdays.</div>
+      <div class="rule">Every change ships with a tested rollback. I check numbers against the source system, not against each other.</div>
+      <div class="rule">White-label by default: your brand in front of your client, mine nowhere.</div>
+    </div>
+  </div>
+</section>
+
+<section id="contact">
+  <div class="wrap">
+    <div class="eyebrow">Contact</div>
+    <h2>Have a GHL backlog or a voice agent in mind?</h2>
+    <div class="contact-box">
+      <p>Send the scope and the deadline. You'll get a fixed quote and the first milestone date.</p>
+      <p><strong><a href="mailto:anton.masuytkin@gmail.com">anton.masuytkin@gmail.com</a> · Telegram <a href="https://t.me/tow4sidethere">@tow4sidethere</a></strong></p>
+      <p><a href="Anton_Masuytkin_GHL_CV.pdf">Download CV (PDF)</a></p>
+      <p class="muted">Kyiv, Ukraine (UTC+2). Independent contractor.</p>
+    </div>
+  </div>
+</section>
+</main>
+
+<footer>
+  <div class="wrap">Anton · GoHighLevel &amp; Voice AI · Updated November 2026</div>
+</footer>
+
+</body>
+</html>
