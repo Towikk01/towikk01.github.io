@@ -1,0 +1,82 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Course sales funnel: site, bank payments, access by a Telegram bot · Anton Masuytkin</title>
+<meta name="description" content="Case study: a Next.js site for an online fitness course with Monobank checkout, a signed payment webhook and one-time access tokens delivered through a Telegram bot. Hosting takeover and migration.">
+<meta name="theme-color" content="#fafaf7">
+<link rel="icon" href="/favicon.png">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="/assets/site.css">
+<script>try{var t=localStorage.getItem('theme');if(t==='dark'||t==='light')document.documentElement.setAttribute('data-theme',t);}catch(e){}</script>
+</head>
+<body>
+<nav class="nav"><div class="wrap">
+  <a class="brand" href="/">Anton Masuytkin</a>
+  <ul><li><a href="/#work">Work</a></li><li><a href="/#more">More</a></li><li><a href="/#how">How I work</a></li><li><a href="/#contact">Contact</a></li></ul>
+  <button class="theme" type="button" aria-label="Toggle dark mode">
+    <svg class="moon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 12.8A9 9 0 1 1 11.2 3a7 7 0 0 0 9.8 9.8z"/></svg>
+    <svg class="sun" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="4"/><path d="M12 2v2M12 20v2M4.9 4.9l1.4 1.4M17.7 17.7l1.4 1.4M2 12h2M20 12h2M4.9 19.1l1.4-1.4M17.7 6.3l1.4-1.4"/></svg>
+  </button>
+</div></nav>
+<main class="wrap">
+<p class="crumbs"><a href="/">Anton Masuytkin</a> / <a href="/#work">Work</a> / Course funnel</p>
+<header class="case-h">
+  <div class="tag"><i>Web</i><i>Next.js 16</i><i>Payments</i><i>Telegram bot</i><i>Python</i></div>
+  <h1>Course sales funnel: site, bank payments, access delivered by a Telegram bot</h1>
+  <p class="sub">A fitness trainer in Kyiv sells an online course (Pilates, stretching, functional). She wanted a simple funnel: a page, a payment, and the course opens in Telegram where her clients already are. No accounts, no passwords, nothing for her to administer by hand.</p>
+  <div class="cta"><a class="btn primary" href="https://tryon.business">Open the live site</a><a class="btn" href="https://github.com/Towikk01/tryon">Site source</a><a class="btn" href="https://github.com/Towikk01/CoursesSalesBot">Bot source</a></div>
+  <ul class="kv">
+    <li><b>Role</b><span>Site, payment and access flow: mine. Bot: built with a second developer; I run it since Sept 2026</span></li>
+    <li><b>Timeline</b><span>Site May–Aug 2026 (38 commits); hosting takeover Sept 2026</span></li>
+    <li><b>Catalogue</b><span>3 tiers · 109 videos in the bot's library at takeover</span></li>
+    <li><b>Stack</b><span>Next.js 16, React 19, Tailwind 4, Monobank API, aiogram 3, FastAPI, Postgres, Redis, Docker</span></li>
+  </ul>
+</header>
+
+<div class="body">
+<div>
+  <h2>The flow</h2>
+  <ul>
+    <li><strong>Site</strong>: landing with program, trainer, testimonials and three tiers; legal pages; Meta Pixel. The checkout route collects name, email and phone and redirects to the bank's payment page.</li>
+    <li><strong>Payment</strong>: Monobank invoice; the webhook verifies the bank's signature before anything happens. The owner gets a Telegram notification when a payment starts and when it succeeds.</li>
+    <li><strong>Access</strong>: the site asks the bot's API for a one-time token (idempotent on payment id, so a repeated webhook can't issue two) and shows a deep link. Opening it in Telegram binds the course to whoever opened it; a <code>/activate</code> command is the fallback for a lost link. Access expires per tier (30 or 90 days).</li>
+    <li><strong>Bot</strong>: catalogue of groups and videos gated by tier, admin menu inside Telegram for the owner (upload, group, grant access with the native user picker), payment audit log, rate limits in Redis.</li>
+  </ul>
+
+  <h2>Taking over the server</h2>
+  <p>In September 2026 the second developer handed the bot over. I moved it to a new VPS with the same bot token (Telegram file ids are bound to it), a full database dump and a single poller, so nothing was lost: 109 videos and every active access came across. The stack runs in Docker behind Caddy with automatic TLS; migrations are pinned so a rebuild can't take the bot down.</p>
+
+  <h2>Honest notes</h2>
+  <ul>
+    <li>The bot's code base is mostly the second developer's; my part is the site, the payment-to-access handoff, the admin picker and operations.</li>
+    <li>Sales volume is the client's business and is not published here.</li>
+  </ul>
+</div>
+
+<div class="aside">
+  <figure class="figure">
+    <div class="browser"><div class="bar"><i></i><i></i><i></i></div><img src="/assets/img/tryon-desktop.webp" width="1280" height="723" alt="Course landing page on desktop" loading="eager"></div>
+    <figcaption>Landing page, 1440 px.</figcaption>
+  </figure>
+  <figure class="figure">
+    <div class="phone" style="width:200px"><img src="/assets/img/tryon-mobile.webp" width="480" height="1041" alt="Course landing page on a phone" loading="lazy"></div>
+    <figcaption>393 px.</figcaption>
+  </figure>
+  <div class="flow col">
+    <div class="node"><b>Choose a tier</b><span>name, email, phone</span></div><div class="arrow"></div>
+    <div class="node"><b>Bank payment</b><span>invoice → signed webhook</span></div><div class="arrow"></div>
+    <div class="node hi"><b>One-time token</b><span>bot API, idempotent on payment id</span></div><div class="arrow"></div>
+    <div class="node"><b>Telegram bot</b><span>deep link opens the course, expiry per tier</span></div>
+  </div>
+</div>
+</div>
+<div class="pager"><a class="btn" href="/#work">← All work</a><a class="btn primary" href="https://t.me/tow4sidethere">Discuss a similar build</a></div>
+</main>
+<footer><div class="wrap"><p>Screenshots: live public sites, demo accounts and local mock data only. No client data.</p><p>© 2026 Anton Masuytkin</p></div></footer>
+<script src="/assets/site.js"></script>
+</body>
+</html>

@@ -1,0 +1,82 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Driver and dispatcher apps for a US trucking dispatch SaaS · Anton Masuytkin</title>
+<meta name="description" content="Case study: React Native / Expo driver and dispatcher apps for a US trucking dispatch SaaS, with an offline status queue, document scanner, 997 unit tests, Maestro e2e, and a telematics connector on the Python backend.">
+<meta name="theme-color" content="#fafaf7">
+<link rel="icon" href="/favicon.png">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="/assets/site.css">
+<script>try{var t=localStorage.getItem('theme');if(t==='dark'||t==='light')document.documentElement.setAttribute('data-theme',t);}catch(e){}</script>
+</head>
+<body>
+<nav class="nav"><div class="wrap">
+  <a class="brand" href="/">Anton Masuytkin</a>
+  <ul><li><a href="/#work">Work</a></li><li><a href="/#more">More</a></li><li><a href="/#how">How I work</a></li><li><a href="/#contact">Contact</a></li></ul>
+  <button class="theme" type="button" aria-label="Toggle dark mode">
+    <svg class="moon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 12.8A9 9 0 1 1 11.2 3a7 7 0 0 0 9.8 9.8z"/></svg>
+    <svg class="sun" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="4"/><path d="M12 2v2M12 20v2M4.9 4.9l1.4 1.4M17.7 17.7l1.4 1.4M2 12h2M20 12h2M4.9 19.1l1.4-1.4M17.7 6.3l1.4-1.4"/></svg>
+  </button>
+</div></nav>
+<main class="wrap">
+<p class="crumbs"><a href="/">Anton Masuytkin</a> / <a href="/#work">Work</a> / Dispatch apps</p>
+<header class="case-h">
+  <div class="tag"><i>Mobile</i><i>React Native · Expo</i><i>TypeScript</i><i>Python</i></div>
+  <h1>Driver and dispatcher apps for a US trucking dispatch SaaS</h1>
+  <p class="sub">A US logistics company runs a dispatch product for carriers. Drivers and dispatchers needed to run loads from their phones: statuses, proof-of-delivery documents, receipts, pay and chat, often with a weak signal on the road. I joined the product team in October 2026.</p>
+  <ul class="kv">
+    <li><b>Role</b><span>Lead author of the driver app in a team of eight contributors; features in the dispatcher app; one backend connector</span></li>
+    <li><b>My commits</b><span>Driver app 242 of 278 · dispatcher app 38 · backend 42 (Oct–Nov 2026)</span></li>
+    <li><b>Quality gate</b><span>997 unit tests (driver), ~390 (dispatcher), Maestro e2e on an emulator, review, GitLab CI</span></li>
+    <li><b>Stack</b><span>Expo SDK 57, RN 0.86, React 19, TypeScript, node:test, Maestro, Python backend</span></li>
+  </ul>
+</header>
+
+<div class="body">
+<div>
+  <h2>Driver app</h2>
+  <ul>
+    <li><strong>Loads and stops</strong> with "I'm here" / "Leaving" saved offline and sent when the signal returns, in order, without duplicates.</li>
+    <li><strong>Document scanner</strong>: four-corner crop, up to 10 pages in one PDF, receiver signature, proof-of-delivery upload with progress; receipts for lumper, scale and fuel.</li>
+    <li><strong>Pre-trip and post-trip inspection</strong> with the federal checklist, weekly pay, chat with dispatch, past loads, reference numbers per stop, expiring-document cards.</li>
+    <li><strong>Biometric login</strong>, light and dark theme, <strong>Spanish localization</strong>.</li>
+  </ul>
+
+  <h2>Dispatcher app</h2>
+  <p>On the dispatcher side I shipped fuel-advance approvals with a confirmation step, rate-confirmation upload from the phone, truck maintenance flags and board features. The dispatcher app's main author is a teammate; my part is 38 commits.</p>
+
+  <h2>Backend</h2>
+  <p>A connector from the Python backend to an ELD telematics provider: per-key rate limits, retries on 429 and 5xx, deduplication of positions, heading calculated from the track. Merged to main with the backend suite green at 1,560 tests.</p>
+
+  <h2>How changes ship</h2>
+  <p>Every merge request goes through a TypeScript check, unit tests, Maestro end-to-end flows on an Android emulator against a mock proxy (no calls to real environments), and code review. Over 60 merge requests merged by late October; 997 unit tests in the driver app by November.</p>
+
+  <div class="callout">The product belongs to the employer, so its name is left out. Screens are from the app running against local mock data: the carrier, driver and loads are fictional.</div>
+</div>
+
+<div class="aside">
+  <figure class="figure">
+    <div class="phones">
+      <div class="phone"><img src="/assets/img/app-arrive.webp" width="480" height="647" alt="Arrival confirmation sheet" loading="eager"></div>
+      <div class="phone"><img src="/assets/img/app-inspection.webp" width="480" height="819" alt="Pre-trip inspection checklist" loading="lazy"></div>
+      <div class="phone"><img src="/assets/img/app-pay.webp" width="480" height="819" alt="Weekly pay list" loading="lazy"></div>
+    </div>
+    <figcaption>Arrival sheet, inspection checklist, weekly pay. Mock data.</figcaption>
+  </figure>
+  <div class="flow col">
+    <div class="node"><b>Tap "I'm here"</b><span>offline or online</span></div><div class="arrow"></div>
+    <div class="node hi"><b>Local queue</b><span>persisted on the device, sent in order</span></div><div class="arrow"></div>
+    <div class="node"><b>API when back online</b><span>retry with backoff, reconcile, no duplicates</span></div>
+  </div>
+</div>
+</div>
+<div class="pager"><a class="btn" href="/#work">← All work</a><a class="btn primary" href="https://t.me/tow4sidethere">Discuss a similar build</a></div>
+</main>
+<footer><div class="wrap"><p>Screenshots: live public sites, demo accounts and local mock data only. No client data.</p><p>© 2026 Anton Masuytkin</p></div></footer>
+<script src="/assets/site.js"></script>
+</body>
+</html>

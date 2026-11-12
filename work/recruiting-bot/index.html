@@ -1,0 +1,88 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Gated recruiting community: a Telegram bot that lives in the CRM · Anton Masuytkin</title>
+<meta name="description" content="Case study: a Telegram bot on Cloudflare Workers and D1 for a closed community of salespeople. Applications, moderation, job posts, referrals, every person and deal in the CRM without duplicates. 192 tests.">
+<meta name="theme-color" content="#fafaf7">
+<link rel="icon" href="/favicon.png">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="/assets/site.css">
+<script>try{var t=localStorage.getItem('theme');if(t==='dark'||t==='light')document.documentElement.setAttribute('data-theme',t);}catch(e){}</script>
+</head>
+<body>
+<nav class="nav"><div class="wrap">
+  <a class="brand" href="/">Anton Masuytkin</a>
+  <ul><li><a href="/#work">Work</a></li><li><a href="/#more">More</a></li><li><a href="/#how">How I work</a></li><li><a href="/#contact">Contact</a></li></ul>
+  <button class="theme" type="button" aria-label="Toggle dark mode">
+    <svg class="moon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 12.8A9 9 0 1 1 11.2 3a7 7 0 0 0 9.8 9.8z"/></svg>
+    <svg class="sun" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="4"/><path d="M12 2v2M12 20v2M4.9 4.9l1.4 1.4M17.7 17.7l1.4 1.4M2 12h2M20 12h2M4.9 19.1l1.4-1.4M17.7 6.3l1.4-1.4"/></svg>
+  </button>
+</div></nav>
+<main class="wrap">
+<p class="crumbs"><a href="/">Anton Masuytkin</a> / <a href="/#work">Work</a> / Recruiting bot</p>
+<header class="case-h">
+  <div class="tag"><i>Telegram bot</i><i>CRM</i><i>Cloudflare Workers</i><i>D1</i></div>
+  <h1>Gated recruiting community: a Telegram bot that lives in the CRM</h1>
+  <p class="sub">An agency launched a closed Telegram community of vetted salespeople. They needed an application form at the door, manual approval, job posts from hiring companies, and every person and application in the CRM without duplicates, so the sales team works from the CRM and never from the chat.</p>
+  <ul class="kv">
+    <li><b>Role</b><span>Solo: bot, CRM model, workflows, tests, deploy on the agency's account</span></li>
+    <li><b>Quality</b><span>192 automated tests on mocked Telegram, CRM and DB; 14 bugs found before release</span></li>
+    <li><b>Storage</b><span>Moved from KV to D1 after KV lost form steps when users answered fast</span></li>
+    <li><b>Stack</b><span>Telegram Bot API, HighLevel API v2, workflows → webhooks, Workers, D1, node:test</span></li>
+  </ul>
+</header>
+
+<div class="body">
+<div>
+  <h2>What I built</h2>
+  <ul>
+    <li><strong>Door</strong>: a join request opens a short application in the bot (candidate or hiring manager). The answers become a contact and an opportunity in the CRM, in a dedicated field folder instead of tags.</li>
+    <li><strong>Moderation</strong> with inline buttons for admins; approved members get an invite link.</li>
+    <li><strong>Job posts</strong>: a wizard that publishes a vacancy into the group with "Apply" and "Refer someone" buttons. Applications go to the vacancy author in Telegram and by email through the CRM's conversations API. Vacancies and Referrals are custom objects linked to contacts and deals.</li>
+    <li><strong>No duplicates</strong>: CRM upsert matches only email and phone, so the bot keeps its own deduplication index.</li>
+    <li><strong>Status back to the candidate</strong>: a CRM workflow on pipeline stage change calls the bot's webhook, and the candidate gets a status update in Telegram.</li>
+  </ul>
+
+  <h2>Testing that found real bugs</h2>
+  <p>192 tests run against mocked Telegram, CRM and database, no network. Before release they caught 14 bugs: races in moderation and publishing, missing timeouts on CRM calls, messages over Telegram's length limit, lost form state in KV under fast replies. All fixed; the last one is why storage moved to D1.</p>
+
+  <h2>Result</h2>
+  <ul>
+    <li>In production on the agency's own Cloudflare account; the sales team recruits from the CRM pipeline, not from the chat.</li>
+      </ul>
+  <div class="callout">Community members are real people, so there are no chat screenshots. The mock on the right reproduces the flow with placeholder text.</div>
+</div>
+
+<div class="aside">
+  <div class="chatmock" aria-hidden="true">
+    <div class="sys">join request received</div>
+    <div class="m">Hi! Two quick questions before we let you in. Are you a candidate or hiring?</div>
+    <div class="btns"><i>Candidate</i><i>Hiring manager</i></div>
+    <div class="m me">Candidate</div>
+    <div class="m">What do you sell and for how long?</div>
+    <div class="m me">B2B SaaS, 4 years</div>
+    <div class="m">Thanks. Your application is with the moderators; you'll get the invite here.</div>
+    <div class="sys">contact + deal in the CRM · admin taps Approve</div>
+    <div class="m">You're in. Here is your invite link.</div>
+    <div class="sys">later, in the group</div>
+    <div class="m">New vacancy: Sales manager, B2B SaaS, remote</div>
+    <div class="btns"><i>Apply</i><i>Refer someone</i></div>
+  </div>
+  <div class="flow col">
+    <div class="node"><b>Join request</b><span>application in the bot</span></div><div class="arrow"></div>
+    <div class="node hi"><b>Worker + D1</b><span>dedupe index, form state, moderation</span></div><div class="arrow"></div>
+    <div class="node"><b>CRM</b><span>contact, deal, Vacancy and Referral objects</span></div><div class="arrow"></div>
+    <div class="node"><b>Stage change</b><span>workflow → webhook → status to candidate</span></div>
+  </div>
+</div>
+</div>
+<div class="pager"><a class="btn" href="/#work">← All work</a><a class="btn primary" href="https://t.me/tow4sidethere">Discuss a similar build</a></div>
+</main>
+<footer><div class="wrap"><p>Screenshots: live public sites, demo accounts and local mock data only. No client data.</p><p>© 2026 Anton Masuytkin</p></div></footer>
+<script src="/assets/site.js"></script>
+</body>
+</html>
