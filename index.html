@@ -1,1 +1,128 @@
-<!doctype html><html lang="en"><head><meta charset="utf-8"/><link rel="icon" href="/favicon.png"/><meta name="viewport" content="width=device-width,initial-scale=1"/><meta name="theme-color" content="#000000"/><meta name="description" content="Web site created using create-react-app"/><link rel="apple-touch-icon" href="/logo192.png"/><link rel="preconnect" href="https://fonts.googleapis.com"/><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin/><link href="https://fonts.googleapis.com/css2?family=Dosis:wght@200;500;800&display=swap" rel="stylesheet"/><link rel="preconnect" href="https://fonts.googleapis.com"/><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin/><link href="https://fonts.googleapis.com/css2?family=Roboto&display=swap" rel="stylesheet"/><link rel="preconnect" href="https://fonts.googleapis.com"/><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin/><link href="https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,400;0,700;1,400&family=Quicksand:wght@400;600&display=swap" rel="stylesheet"/><link rel="manifest" href="/manifest.json"/><title>Towikk</title><script defer="defer" src="/static/js/main.bdf5544f.js"></script><link href="/static/css/main.1be752b9.css" rel="stylesheet"></head><body><noscript>You need to enable JavaScript to run this app.</noscript><div id="root"></div></body></html>
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Anton Masiutkin · GoHighLevel + AI Automation Builder</title>
+<meta name="description" content="GoHighLevel and AI automation builder: CRM integrations, Telegram bots, Cloudflare Workers, n8n and React Native apps.">
+<meta name="theme-color" content="#f7f7f5">
+<link rel="icon" href="/favicon.png">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+<style>
+:root{--bg:#f7f7f5;--card:#fff;--ink:#16181d;--muted:#5d6370;--line:#e4e4df;--accent:#2f5bea;--accent-soft:#eaf0ff;--chip:#f1f1ee;--radius:14px}
+@media (prefers-color-scheme:dark){:root{--bg:#0f1115;--card:#171a21;--ink:#eceef2;--muted:#9aa1ae;--line:#272b35;--accent:#7b9cff;--accent-soft:#1c2540;--chip:#1f232c}}
+*,*::before,*::after{box-sizing:border-box}
+html,body{max-width:100%;overflow-x:hidden}
+html{-webkit-text-size-adjust:100%}
+body{margin:0;background:var(--bg);color:var(--ink);font:16px/1.6 Inter,system-ui,-apple-system,Segoe UI,Roboto,sans-serif}
+img{max-width:100%;height:auto;display:block}
+a{color:var(--accent)}
+p,li,h1,h2,h3,dd{overflow-wrap:anywhere}
+.wrap{max-width:1040px;margin:0 auto;padding:0 16px}
+header{padding:48px 0 28px}
+.eyebrow{font-size:13px;font-weight:600;letter-spacing:.06em;text-transform:uppercase;color:var(--muted);margin:0 0 10px}
+h1{font-size:34px;line-height:1.15;margin:0 0 12px;letter-spacing:-.02em}
+.lead{font-size:18px;color:var(--muted);max-width:720px;margin:0 0 22px}
+.lead strong{color:var(--ink);font-weight:600}
+.cta{display:flex;flex-wrap:wrap;gap:10px}
+.btn{display:inline-flex;align-items:center;padding:11px 18px;border-radius:999px;border:1px solid var(--line);background:var(--card);color:var(--ink);text-decoration:none;font-weight:600;font-size:15px}
+.btn.primary{background:var(--accent);border-color:var(--accent);color:#0b0d12}
+@media (prefers-color-scheme:light){.btn.primary{color:#fff}}
+.btn:hover{border-color:var(--accent)}
+section{padding:28px 0}
+h2{font-size:24px;letter-spacing:-.01em;margin:0 0 16px}
+.grid{display:grid;gap:12px;grid-template-columns:1fr}
+.tile,.work{background:var(--card);border:1px solid var(--line);border-radius:var(--radius);padding:16px 18px}
+.tile h3,.work h3{font-size:17px;margin:0 0 4px;line-height:1.3}
+.tile p,.work p{margin:0;color:var(--muted);font-size:15px}
+.work{display:flex;flex-direction:column;gap:8px;text-decoration:none;color:var(--ink)}
+.work:hover{border-color:var(--accent)}
+.tag{align-self:flex-start;font-size:12px;font-weight:600;color:var(--accent);background:var(--accent-soft);border-radius:999px;padding:3px 10px}
+.work img{border:1px solid var(--line);border-radius:10px;margin-top:6px;background:var(--card)}
+.more{margin-top:16px}
+.stack{display:grid;gap:12px;grid-template-columns:1fr}
+.stack h3{font-size:14px;margin:0 0 8px;color:var(--muted);text-transform:uppercase;letter-spacing:.05em}
+.chips{display:flex;flex-wrap:wrap;gap:6px;margin:0;padding:0;list-style:none}
+.chips li{font-size:13px;background:var(--chip);border:1px solid var(--line);border-radius:999px;padding:3px 10px}
+footer{padding:32px 0 56px;color:var(--muted);font-size:14px}
+footer p{margin:0 0 14px}
+@media (min-width:700px){header{padding:72px 0 36px}h1{font-size:46px}.grid{grid-template-columns:1fr 1fr}.stack{grid-template-columns:repeat(3,1fr)}}
+</style>
+</head>
+<body>
+<div class="wrap">
+<header>
+  <p class="eyebrow">Anton Masiutkin · Kyiv, Ukraine · UTC+2</p>
+  <h1>GoHighLevel + AI automation builder</h1>
+  <p class="lead">I build the parts of a CRM that clicking can't: <strong>API integrations, Telegram bots, Cloudflare Workers and n8n flows</strong>, plus React Native apps. Async contractor, fixed-price builds or a monthly retainer.</p>
+  <div class="cta">
+    <a class="btn primary" href="/ghl/">Case studies</a>
+    <a class="btn" href="/ghl/Anton_Masuytkin_GHL_CV.pdf">CV (PDF)</a>
+    <a class="btn" href="https://t.me/tow4sidethere">Telegram</a>
+  </div>
+</header>
+
+<section id="what">
+  <h2>What I do</h2>
+  <div class="grid">
+    <div class="tile"><h3>GoHighLevel builds</h3><p>Pipelines, custom objects, workflows, dashboards and white-label platform setup for agencies.</p></div>
+    <div class="tile"><h3>Integrations and APIs</h3><p>GHL API v2, marketplace apps with OAuth, webhooks, stores and carriers synced both ways.</p></div>
+    <div class="tile"><h3>Automation and bots</h3><p>n8n flows with retries and alerts, Cloudflare Workers + D1, Telegram bots wired to CRM contacts and deals.</p></div>
+    <div class="tile"><h3>Mobile apps</h3><p>React Native / Expo apps with offline queues, document capture and end-to-end tests.</p></div>
+  </div>
+</section>
+
+<section id="work">
+  <h2>Selected work</h2>
+  <div class="grid">
+    <a class="work" href="/ghl/#cases">
+      <span class="tag">GHL · Analytics</span>
+      <h3>Sales, finance and inventory dashboard</h3>
+      <p>Worker + D1 sync from WooCommerce and the CRM, custom objects, native dashboards.</p>
+      <img src="/ghl/img/crm-dashboard-native.webp" alt="CRM dashboard (brand and figures blurred)" loading="lazy" width="600" height="340">
+    </a>
+    <a class="work" href="/ghl/#cases">
+      <span class="tag">Telegram bot · CRM</span>
+      <h3>Gated recruiting community bot</h3>
+      <p>Applications, moderation and job posts in Telegram, every person and deal in the CRM without duplicates.</p>
+    </a>
+    <a class="work" href="/ghl/#cases">
+      <span class="tag">GHL Marketplace app</span>
+      <h3>Click-to-call app inside GHL</h3>
+      <p>OAuth self-install, multi-tenant Worker, a Call button in the contact record.</p>
+    </a>
+    <a class="work" href="/ghl/#cases">
+      <span class="tag">React Native · Expo</span>
+      <h3>Driver and dispatcher mobile apps</h3>
+      <p>Two apps for a US trucking dispatch SaaS: offline status queue, document scanner, Maestro e2e tests.</p>
+      <img src="/ghl/img/mobile-driver-load.webp" alt="Driver app screen" loading="lazy" width="300" height="600" style="max-height:340px;width:auto">
+    </a>
+  </div>
+  <p class="more"><a href="/ghl/">All case studies, with problem, build and result &rarr;</a></p>
+</section>
+
+<section id="stack">
+  <h2>Stack</h2>
+  <div class="stack">
+    <div><h3>CRM &amp; automation</h3><ul class="chips"><li>GoHighLevel</li><li>GHL API v2</li><li>Marketplace apps</li><li>n8n</li><li>Webhooks</li></ul></div>
+    <div><h3>Code &amp; infra</h3><ul class="chips"><li>TypeScript</li><li>Node.js</li><li>Python</li><li>Cloudflare Workers</li><li>D1</li></ul></div>
+    <div><h3>AI &amp; apps</h3><ul class="chips"><li>OpenAI</li><li>Gemini</li><li>Telegram Bot API</li><li>React Native</li><li>Expo</li></ul></div>
+  </div>
+</section>
+
+<footer id="contact">
+  <h2 style="color:var(--ink)">Contact</h2>
+  <p>Client names and data are left out on purpose. Screenshots come from real projects, with brands and figures blurred.</p>
+  <div class="cta">
+    <a class="btn primary" href="https://t.me/tow4sidethere">Telegram</a>
+    <a class="btn" href="mailto:anton.masuytkin@gmail.com">anton.masuytkin@gmail.com</a>
+    <a class="btn" href="/ghl/Anton_Masuytkin_GHL_CV.pdf">CV (PDF)</a>
+    <a class="btn" href="https://github.com/Towikk01">GitHub</a>
+    <a class="btn" href="https://www.linkedin.com/in/towikk/">LinkedIn</a>
+  </div>
+</footer>
+</div>
+</body>
+</html>
